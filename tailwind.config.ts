@@ -1,20 +1,159 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
+import {nextui} from "@nextui-org/react";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+  theme: {},
+  darkMode: "class",
+  plugins: [
+    nextui({
+      prefix: "nextui", // prefix for themes variables
+      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
+      defaultTheme: "dark", // default theme from the themes object
+      defaultExtendTheme: "dark", // default theme to extend on custom themes
+      
+      themes: {
+        light: {
+          colors: {
+            background: "#FFFFFF",
+            foreground: "#11181C",
+            primary: {
+              50: "#F5F0FF",
+              100: "#DBCCFB",
+              200: "#B69AF8",
+              300: "#8B66EB",
+              400: "#653FD8",
+              500: "#340BBE",
+              600: "#2708A3",
+              700: "#1D0588",
+              800: "#14036E",
+              900: "#0E025B",
+              DEFAULT: "#8B66EB",
+            },
+            secondary: {
+              100: "#C9FCEC",
+              200: "#95F9E2",
+              300: "#5FEDD9",
+              400: "#37DCD3",
+              500: "#00C0C6",
+              600: "#0096AA",
+              700: "#00728E",
+              800: "#005272",
+              900: "#003B5F",
+              DEFAULT: "#37DCD3",
+            },
+            success: {
+              100: "#F1FBCA",
+              200: "#E0F797",
+              300: "#C3E760",
+              400: "#A3D038",
+              500: "#78B205",
+              600: "#619903",
+              700: "#4D8002",
+              800: "#3A6701",
+              900: "#2D5500",
+              DEFAULT: "#A3D038",
+            },
+            warning: {
+              100: "#FEF5CC",
+              200: "#FDE999",
+              300: "#F9D866",
+              400: "#F4C640",
+              500: "#EDAB04",
+              600: "#CB8D02",
+              700: "#AA7102",
+              800: "#895601",
+              900: "#714400",
+              DEFAULT: "#F4C640",
+            },
+            danger: {
+              100: "#FCE2CF",
+              200: "#FABEA1",
+              300: "#F29070",
+              400: "#E6654C",
+              500: "#D62717",
+              600: "#B81110",
+              700: "#9A0B16",
+              800: "#7C071A",
+              900: "#66041C",
+              DEFAULT: "#E6654C",
+            },
+          },
+        },
+        dark: {
+          colors: {
+            background: "#000000",
+            foreground: "#ECEDEE",
+            primary: {
+              50: "#F5F0FF",
+              100: "#DBCCFB",
+              200: "#B69AF8",
+              300: "#8B66EB",
+              400: "#653FD8",
+              500: "#340BBE",
+              600: "#2708A3",
+              700: "#1D0588",
+              800: "#14036E",
+              900: "#0E025B",
+              DEFAULT: "#8B66EB",
+            },
+            secondary: {
+              100: "#C9FCEC",
+              200: "#95F9E2",
+              300: "#5FEDD9",
+              400: "#37DCD3",
+              500: "#00C0C6",
+              600: "#0096AA",
+              700: "#00728E",
+              800: "#005272",
+              900: "#003B5F",
+              DEFAULT: "#37DCD3",
+            },
+            success: {
+              100: "#F1FBCA",
+              200: "#E0F797",
+              300: "#C3E760",
+              400: "#A3D038",
+              500: "#78B205",
+              600: "#619903",
+              700: "#4D8002",
+              800: "#3A6701",
+              900: "#2D5500",
+              DEFAULT: "#A3D038",
+            },
+            warning: {
+              100: "#FEF5CC",
+              200: "#FDE999",
+              300: "#F9D866",
+              400: "#F4C640",
+              500: "#EDAB04",
+              600: "#CB8D02",
+              700: "#AA7102",
+              800: "#895601",
+              900: "#714400",
+              DEFAULT: "#F4C640",
+            },
+            danger: {
+              100: "#FCE2CF",
+              200: "#FABEA1",
+              300: "#F29070",
+              400: "#E6654C",
+              500: "#D62717",
+              600: "#B81110",
+              700: "#9A0B16",
+              800: "#7C071A",
+              900: "#66041C",
+              DEFAULT: "#E6654C",
+            },
+          },
+        },
       },
-    },
-  },
-  plugins: [],
-};
-export default config;
+    }),
+  ],
+}
+export default config
