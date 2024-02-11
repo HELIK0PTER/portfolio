@@ -12,7 +12,7 @@ export const Footer = () => {
       bg-primary-800 bg-opacity-40
     `}>
 		  <p className={`text-primary-100`}>© 2023 Matheus</p>
-		  <div className={`flex gap-5`}>
+		  <div className={`gap-5 hidden md:flex`}>
 		    <Link href={`https://github.com/HELIK0PTER/MATHEUS_KOPSGUEDES`} className={`flex items-center justify-center gap-1`}> <FaGithub /> GitHub</Link>
         {/*modifier le repo gitlab et remettre le bon lien*/}
         <Link href={`https://gitlab.com`} className={`flex items-center justify-center gap-1`}> <FaGitlab /> GitLab</Link>

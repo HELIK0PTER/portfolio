@@ -62,7 +62,9 @@ export const Header = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Image alt={`Logo`} src={`/M.svg`} width={100} height={100} className={`h-[60px]`} />
+          <Link href="/">
+            <Image alt={`Logo`} src={`/M.svg`} width={100} height={100} className={`h-[60px]`} />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -75,23 +77,23 @@ export const Header = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="px-2 py-1 bg-primary-300 bg-opacity-20 rounded-md sm:hidden lg:flex">
-          <p className={`font-semibold text-primary`}>
+        <NavbarItem className="px-2 py-1 bg-primary-300 bg-opacity-20 rounded-md hidden lg:flex">
+          <Link href="/" className={`font-semibold text-primary`}>
             mon portfolio
-          </p>
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
+        {links.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className={`
-              w-full text-${index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"}
+              w-full text-primary-100
               `}
-              href="#"
+              href={item.href}
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
