@@ -1,4 +1,3 @@
-
 const PERSO = 'PERSO'
 const PRO = 'PRO'
 const SCOLAIRE = 'SCOLAIRE'

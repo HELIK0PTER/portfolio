@@ -1,69 +1,78 @@
 "use client";
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Article } from '@/components/veille-components/Article';
-import {Section} from "@/components/Sections/Global/Section";
+import { veilleData } from '@/lib/veilleData';
+import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 
-interface ArticleType {
-  id: number;
-  title: string;
-  note: number;
-  image: string;
-}
+const tris = [
+  {
+    index: 0,
+    value: 'aucun',
+  },
+  {
+    index: 1,
+    value: 'note: croissant',
+  },
+  {
+    index: 2,
+    value: 'note: decroissant',
+  },
+  {
+    index: 3,
+    value: 'recents',
+  },
+  {
+    index: 4,
+    value: 'anciens',
+  },
+];
 
 export const Articles: React.FC = () => {
-  const [ordering, setOrdering] = useState<string>('');
+  const [ordering, setOrdering] = useState<string>('aucun');
+  const [articles, setArticles] = useState(veilleData);
 
-  const articles : ArticleType[] = require('./articles.json').articles
-  const articlesCroissant = articles.slice().sort((a, b) => a.note - b.note)
-  const articlesDecroissant = articles.slice().sort((a, b) => b.note - a.note);
-
+  useEffect(() => {
+    if (ordering === 'note: croissant') {
+      setArticles([...articles].sort((a, b) => a.note - b.note));
+    } else if (ordering === 'note: decroissant') {
+      setArticles([...articles].sort((a, b) => b.note - a.note));
+    }
+  }, [articles, ordering]);
+  
+  const handleSelectionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setOrdering(e.target.value);
+  }
+  
   return (
-    <Section>
+    <>
       <div className="flex flex-col md:flex-row justify-start items-center w-full pt-2">
-        <label className="pr-2">Trier par :</label>
-        <select
-          id="sortSelect"
-          className="text-white bg-gray-600 hover:bg-gray-800 font-medium rounded-full text-sm px-4 py-2 focus:ring-primary-200 focus:border-primary-100"
-          value={ordering}
-          onChange={(e) => setOrdering(e.target.value)}
+        <Select
+          label="Trier par :"
+          labelPlacement={"outside-left"}
+          className="max-w-xs"
+          selectedKeys={[ordering]}
+          onChange={handleSelectionChange}
         >
-          <option value="">Aucun</option>
-          <option value="croissant">Notes: Croissant</option>
-          <option value="decroissant">Notes: Décroissant</option>
-        </select>
+          {tris.map((tri) => (
+            <SelectItem key={tri.value} value={tri.value}>
+              {tri.value || 'aucun'}
+            </SelectItem>
+          ))}
+        </Select>
       </div>
 
       <div className="w-full grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {ordering === 'croissant'
-          ? articlesCroissant.map((article) => (
-            <Article
-              key={article.id}
-              id={article.id}
-              title={article.title}
-              note={article.note}
-              image={article.image}
-            />
-          ))
-          : ordering === 'decroissant'
-            ? articlesDecroissant.map((article) => (
-              <Article
-                key={article.id}
-                id={article.id}
-                title={article.title}
-                note={article.note}
-                image={article.image}
-              />
-            ))
-            : articles.map((article) => (
-              <Article
-                key={article.id}
-                id={article.id}
-                title={article.title}
-                note={article.note}
-                image={article.image}
-              />
-            ))}
+        {articles.map((article) => (
+          <Article
+            key={article.title}
+            title={article.title}
+            description={article.description}
+            note={article.note}
+            image={article.img}
+            link={article.link}
+          />
+        ))}
       </div>
-    </Section>
+    </>
   );
 };

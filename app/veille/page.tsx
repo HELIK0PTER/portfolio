@@ -7,7 +7,7 @@ export default function Veille() {
     <>
       <Hero>
         <Section>
-          <h1> {`Bitcoin: à l'approche du bullrun`}</h1>
+          <h1 className={`text-primary-200 text-4xl`}> {`Bitcoin: à l'approche du bullrun`}</h1>
           <p className="text-center">
             {`Le Bitcoin se rapproche d'un bullrun potentiel, marqué par une hausse significative de son
             prix et un intérêt croissant des investisseurs institutionnels..

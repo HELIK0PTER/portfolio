@@ -1,26 +1,80 @@
-import Image from "next/image";
-import {Section} from "@/components/Sections/Global/Section";
-import React from "react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import React, {useEffect, useState} from "react";
 
 interface ArticleProps {
-  id: number;
   title: string;
   note: number;
+  description: string;
   image: string | "public/images/react.png";
+  link: string;
 }
 
 export const Article: React.FC<ArticleProps> = ({
-  title,
-  note,
-  image,
+                                                  title,
+                                                  note,
+                                                  description,
+                                                  image,
+                                                  link,
                                                 }) => {
+  
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  
+  let stars = (note: number) => {
+    let stars = [];
+    for (let i = 0; i < note; i++) {
+      stars.push(<span key={i} className="text-primary-200">★</span>);
+    }
+    return stars;
+  }
+  
   return (
-    <Section>
-      <div className="border border-gray-800/70 shadow-md cursor-pointer flex flex-col justify-between items-center rounded-lg p-4 mt-5 w-[200px] h-[200px] transition duration-200 ease-out hover:ease-in md:saturate-50 hover:saturate-100 hover:scale-[105%]">
-        <p className="text-[20px]">{title}</p>
-        <Image src={image} alt="image" width={35} height={35}/>
-        <p>Note: {note}</p>
-      </div>
-    </Section>
+    <>
+      <Card onClick={onOpen} isPressable={true} fullWidth={true} className="py-4 hover:scale-[102%] hover:cursor-pointer">
+        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+          <p className="text-tiny uppercase font-bold">{title}</p>
+          <small className="text-default-500"> {stars(note)} </small>
+        </CardHeader>
+        <CardBody className="overflow-visible py-2">
+          <Image
+            alt="Card background"
+            className="object-cover rounded-xl"
+            src= {`/veille/` + image}
+            width={270}
+          />
+        </CardBody>
+      </Card>
+      
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
+              <ModalBody className={`flex items-center text-center`}>
+                <p>
+                  {description}
+                </p>
+                  <Image
+                    alt="Card background"
+                    className="object-cover rounded-xl"
+                    src={`/veille/` + image}
+                    width={270}
+                  />
+              </ModalBody>
+              <ModalFooter className={`justify-between`}>
+                <div className={`pt-2`}>
+                  note: {stars(note)}
+                </div>
+                <div>
+                  <Button color="primary" onPress={() => window.open(link)}>
+                    Lien
+                  </Button>
+                </div>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
