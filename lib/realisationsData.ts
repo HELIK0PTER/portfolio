@@ -18,5 +18,5 @@ export const realisationsData = [
     img: '/text-adventure.png',
     link: '/text-adventure',
     value: SCOLAIRE
-  }
+  },
 ]

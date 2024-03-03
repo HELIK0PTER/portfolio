@@ -9,9 +9,9 @@ export const Footer = () => {
       flex justify-between items-center
       h-20 w-full 
       p-8
-      bg-primary-800 bg-opacity-40
-    `}>
-		  <p className={`text-primary-100`}>© 2023 Matheus</p>
+      bg-primary-300
+      font-semibold`}>
+		  <p className={``}>© 2023 Matheus</p>
 		  <div className={`gap-5 hidden md:flex`}>
 		    <Link href={`https://github.com/HELIK0PTER/MATHEUS_KOPSGUEDES`} className={`flex items-center justify-center gap-1`}> <FaGithub /> GitHub</Link>
         {/*modifier le repo gitlab et remettre le bon lien*/}

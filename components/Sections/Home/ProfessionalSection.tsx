@@ -17,12 +17,12 @@ export const ProfessionalSection = () => {
   return (
     <Section>
       <h1 className={`
-        text-primary-200 text-3xl font-bold
+        text-success text-3xl font-bold
         pb-5
       `}>
         Parcours professionnel
       </h1>
-      <VerticalTimeline lineColor={'#fff'}>
+      <VerticalTimeline lineColor={'#98ffc3'}>
         {proData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
@@ -39,8 +39,9 @@ export const ProfessionalSection = () => {
               date={item.date}
               icon={ <PiBagSimpleFill /> }
               iconStyle={{
-                background: "rgba(0, 0, 0, 0.90)",
+                background: "rgba(199,101,255)",
                 fontSize: "1.5rem",
+                color:"white"
               }}
               visible={true}
             >

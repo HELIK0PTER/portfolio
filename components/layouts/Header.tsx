@@ -10,13 +10,14 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Button
 } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
+import {router} from "next/client";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  
 
   const links = [
     {
@@ -55,7 +56,7 @@ export const Header = () => {
   ];
 
   return (
-    <Navbar position={`sticky`} onMenuOpenChange={setIsMenuOpen} className={``} >
+    <Navbar position={`sticky`} onMenuOpenChange={setIsMenuOpen} className={`bg-primary-300 bg-opacity-40`} >
       <NavbarContent justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -63,22 +64,25 @@ export const Header = () => {
         />
         <NavbarBrand>
           <Link href="/">
-            <Image alt={`Logo`} src={`/M.svg`} width={100} height={100} className={`h-[60px]`} />
+            <Image alt={`Logo`} src={`/M.svg`} width={100} height={100} className={`h-[60px] hover:scale-105 transition`} />
           </Link>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-5" justify="center">
+      <NavbarContent className="hidden sm:flex gap-0" justify="center">
         {links.map((item, index) => (
-          <NavbarItem key={`${item.label}`}>
-            <Link href={item.href}>{item.label}</Link>
+          <NavbarItem key={`${item.label}`} className={`h-full w-full`}>
+            <Link href={item.href}
+                  className={`px-3 h-full flex items-center hover:bg-primary-500 hover:bg-opacity-20
+                  font-semibold transition
+                  `}>{item.label}</Link>
           </NavbarItem>
         ))}
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="px-2 py-1 bg-primary-300 bg-opacity-20 rounded-md hidden lg:flex">
-          <Link href="/" className={`font-semibold text-primary`}>
+        <NavbarItem className="bg-success-300 bg-opacity-60 rounded-md hidden lg:flex hover:bg-opacity-100 transition">
+          <Link href="/" className={`px-2 py-1 font-semibold text-primary`}>
             mon portfolio
           </Link>
         </NavbarItem>
@@ -92,6 +96,7 @@ export const Header = () => {
               w-full text-primary-100
               `}
               href={item.href}
+              
             >
               {item.label}
             </Link>

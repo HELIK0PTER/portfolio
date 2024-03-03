@@ -6,7 +6,7 @@ import Image from 'next/image'
 import {Hero} from "@/components/Sections/Global/Hero";
 import {SchoolSection} from "@/components/Sections/Home/SchoolSection";
 import {ProfessionalSection} from "@/components/Sections/Home/ProfessionalSection";
-import {SoftSkills} from "@/components/Sections/Home/SoftSkills";
+import {Langages} from "@/components/Sections/Home/Langages";
 import {Section} from "@/components/Sections/Global/Section";
 
 export default function Home() {
@@ -18,10 +18,14 @@ export default function Home() {
                  className={`
           h-[120px] w-[120px]
           p-1
-          bg-primary-500 bg-opacity-20
-          border-4 border-primary-500 rounded-full
+          bg-primary-400 bg-opacity-20
+          rounded-full
+          hover:rotate-[360deg]
+          hover:duration-[1s]
+          duration-[.5s]
+          
           `} />
-          <h1 className={`text-primary-200 text-4xl`}>
+          <h1 className={`text-success text-4xl font-semibold`}>
             Matheus Kops Guedes
           </h1>
           <p>
@@ -34,7 +38,7 @@ export default function Home() {
       </Hero>
       <SchoolSection/>
       <ProfessionalSection/>
-      <SoftSkills/>
+      <Langages/>
 
     </main>
   )
