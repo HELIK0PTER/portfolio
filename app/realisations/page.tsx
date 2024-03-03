@@ -29,36 +29,7 @@ const Realisation = () => {
           Professionnelles, Scolaire et Personnelles
         </h2>
       </Hero>
-      <Section className={`bg-gray-950 min-h-[400px]`}>
-        <div className={`flex justify-start gap-4`}>
-          <button onClick={() => setRealisations('ALL')} className={`text-primary-100 text-medium`}>Tout</button>
-          <button onClick={() => setRealisations('PRO')} className={`text-primary-100 text-medium`}>Professionnelles
-          </button>
-          <button onClick={() => setRealisations('SCOLAIRE')} className={`text-primary-100 text-medium`}>Scolaire
-          </button>
-          <button onClick={() => setRealisations('PERSO')} className={`text-primary-100 text-medium`}>Personnelles
-          </button>
-        </div>
-        
-        <Masonry columns={{xs: 1, md: 3}} spacing={2}>
-          
-          {filteredRealisations.map((realisation, index) => {
-            return (
-              <div key={index}>
-                <Card className="py-4 hover:scale-[102%] hover:cursor-pointer">
-                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                    <p className="text-large uppercase font-bold">{realisation.title}</p>
-                  </CardHeader>
-                  <CardBody>
-                    <p className={`text-medium text-primary-100 text-opacity-70`}>{realisation.description}</p>
-                  </CardBody>
-                </Card>
-              </div>
-            )
-          })}
-
-        </Masonry>
-      </Section>
+      
     </>
   )
 }
