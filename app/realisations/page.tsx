@@ -44,8 +44,8 @@ const Realisation = () => {
           
           {filteredRealisations.map((realisation, index) => {
             return (
-              <div>
-                <Card key={index} className="py-4 hover:scale-[102%] hover:cursor-pointer">
+              <div key={index}>
+                <Card className="py-4 hover:scale-[102%] hover:cursor-pointer">
                   <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                     <p className="text-large uppercase font-bold">{realisation.title}</p>
                   </CardHeader>
