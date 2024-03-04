@@ -11,13 +11,16 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/react";
-import Link from "next/link";
+import {Link} from "@nextui-org/react";
 import Image from "next/image";
 import {router} from "next/client";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   
+  const handleClick = () => {
+    setIsMenuOpen(false)
+  }
 
   const links = [
     {
@@ -90,13 +93,12 @@ export const Header = () => {
 
       <NavbarMenu>
         {links.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item}-${index}`}
+          >
             <Link
-              className={`
-              w-full text-primary-100
-              `}
+              className={`w-full text-primary`}
               href={item.href}
-              
+              onPress = { handleClick }
             >
               {item.label}
             </Link>

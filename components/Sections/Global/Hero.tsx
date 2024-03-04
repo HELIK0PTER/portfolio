@@ -11,7 +11,8 @@ export const Hero = ({children, className}:props) => {
     <div
     className={twMerge(`
     flex flex-col justify-center items-center gap-8
-    h-[85vh]
+    min-h-[85vh]
+    my
     text-xl font-bold text-center    
     `, className)}>
       {children}
