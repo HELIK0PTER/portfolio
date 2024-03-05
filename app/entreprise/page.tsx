@@ -48,7 +48,7 @@ const Entreprise = () => {
           <div className={`columns-1 md:columns-2 gap-8`}>
             { missionsData.map((mission, index) => {
               return (
-                <Card key={index} className={`px-1 py-4 hover:scale-[102%]`}>
+                <Card key={index} className={`px-1 py-4 md:hover:scale-[101%] hover:cursor-default`}>
                   <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                     <h3 className={`text-primary-500 text-2xl font-bold`}>{mission.title}</h3>
                   </CardHeader>

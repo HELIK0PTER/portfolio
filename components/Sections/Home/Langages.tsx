@@ -9,7 +9,7 @@ export const Langages = () => {
       <div className={`flex flex-row flex-wrap justify-center gap-5 w-[70%]`}>
         {skillsData.map((skill, index) => {
           return (
-            <div key={index} className={`py-1 px-2 bg-primary-200 font-semibold text-success rounded-lg hover:scale-110 transition hover:cursor-pointer`}>{skill}</div>
+            <div key={index} className={`py-1 px-2 bg-primary-200 font-semibold text-success rounded-lg md:hover:scale-110 transition hover:cursor-default`}>{skill}</div>
           );
         })}
       </div>
