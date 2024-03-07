@@ -1,6 +1,6 @@
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/modal";
+import {Button} from "@nextui-org/react"
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
-import React, {useEffect, useState} from "react";
 
 interface ArticleProps {
   title: string;
@@ -11,12 +11,12 @@ interface ArticleProps {
 }
 
 export const Article: React.FC<ArticleProps> = ({
-                                                  title,
-                                                  note,
-                                                  description,
-                                                  image,
-                                                  link,
-                                                }) => {
+  title,
+  note,
+  description,
+  image,
+  link,
+}) => {
   
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   

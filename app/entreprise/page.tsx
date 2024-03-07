@@ -3,11 +3,10 @@ import React from 'react'
 import Image from 'next/image'
 import {Hero} from "@/components/Sections/Global/Hero";
 import { Section } from '@/components/Sections/Global/Section';
-
-import { missionsData } from '@/lib/entrepriseData'
-import {Card, CardBody, CardHeader} from "@nextui-org/react";
+import { Missions } from './Missions';
 
 const Entreprise = () => {
+
   return (
     <>
       <Hero className={``}>
@@ -36,35 +35,12 @@ const Entreprise = () => {
       </Section>
       <Section className={`bg-success`}>
         <div className={`flex flex-col items-center gap-5`}>
-          <h1 className={`text-primary-50 text-3xl font-bold`}>Mes missions</h1>
-          <p>
-            J'ai travaillé essentiellement avec le Gestionnaire Infrastructure.
-            La plupart de mes missions portaient sur du support de niveau 1 et 2. Mais j'ai eut l'occasion
-            d'intervenir sur des projets d'infra, base de données et même de développement.
-          </p>
+          <h1 className={`text-primary-50 text-3xl font-bold`}>Mes missions principales</h1>
         </div>
         
-        <Section full>
-          <div className={`columns-1 md:columns-2 gap-8`}>
-            { missionsData.map((mission, index) => {
-              return (
-                <Card key={index} className={`px-1 py-4 md:hover:scale-[101%] hover:cursor-default`}>
-                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                    <h3 className={`text-primary-500 text-2xl font-bold`}>{mission.title}</h3>
-                  </CardHeader>
-                  <CardBody className="overflow-visible py-2">
-                    <p className={`text-primary text-medium`}>
-                      {mission.content}
-                    </p>
-                  </CardBody>
-                </Card>
-              )
-            })}
-          </div>
-        </Section>
+        <Missions/>
       </Section>
     </>
   )
-}
-
+};
 export default Entreprise

@@ -10,7 +10,7 @@ export const missionsData = [
     annee: [1, 2]
   },
   {
-    title: "Support niveau 1",
+    title: "Support niveau 1-2",
     content: `Traitement de la demande des utilisateurs, résolution des problèmes de niveau 1, dans la mesure du 
     possible. C'est a dire que nôtre réseau, nos serveurs et nos matériels nous sont délivrés par le groupe mère en
     Allemagne (DB Systel) et que nous n'avons pas la main sur la plupart des problèmes. (notamment leur logiciel de
