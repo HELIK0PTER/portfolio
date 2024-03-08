@@ -1,48 +1,32 @@
-'useclient'
+'use client'
 
+import { CardContent } from "@mui/material";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
-interface ArticleProps {
+interface MissionProps {
   title: string;
-  note: number;
   description: string;
-  image: string | "public/images/react.png";
-  link: string;
+  image?: string | "public/images/react.png";
 }
 
-export const Article: React.FC<ArticleProps> = ({
-                                                  title,
-                                                  note,
-                                                  description,
-                                                  image,
-                                                  link,
-                                                }) => {
-  
+export const Mission: React.FC<MissionProps> = ({
+  title,
+  description,
+  image,
+}) => {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  
-  let stars = (note: number) => {
-    let stars = [];
-    for (let i = 0; i < note; i++) {
-      stars.push(<span key={i} className="text-primary-200">★</span>);
-    }
-    return stars;
-  }
   
   return (
     <>
       <Card onClick={onOpen} isPressable={true} fullWidth={true} className="py-4 hover:scale-[102%] hover:cursor-pointer">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">{title}</p>
-          <small className="text-default-500"> {stars(note)} </small>
         </CardHeader>
         <CardBody className="overflow-visible py-2">
-          <Image
-            alt="Card background"
-            className="object-cover rounded-xl"
-            src= {`/veille/` + image}
-            width={270}
-          />
+          <CardContent>
+            
+          </CardContent>
         </CardBody>
       </Card>
       
@@ -62,16 +46,6 @@ export const Article: React.FC<ArticleProps> = ({
                     width={270}
                   />
               </ModalBody>
-              <ModalFooter className={`justify-between`}>
-                <div className={`pt-2`}>
-                  note: {stars(note)}
-                </div>
-                <div>
-                  <Button color="primary" onPress={() => window.open(link)}>
-                    Lien
-                  </Button>
-                </div>
-              </ModalFooter>
             </>
           )}
         </ModalContent>

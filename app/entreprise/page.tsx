@@ -5,7 +5,7 @@ import {Hero} from "@/components/Sections/Global/Hero";
 import { Section } from '@/components/Sections/Global/Section';
 
 import { missionsData } from '@/lib/entrepriseData'
-import {Card, CardBody, CardHeader} from "@nextui-org/react";
+import { Mission } from './Mission';
 
 const Entreprise = () => {
   return (
@@ -17,7 +17,7 @@ const Entreprise = () => {
       </Hero>
       <Section className={`bg-success`}>
         <div className={`flex flex-col gap-5`}>
-          <h2 className={`text-primary-200 text-3xl font-bold`}>Présentation</h2>
+          <h2 className={`mb-12 text-primary-200 text-3xl font-bold`}>Présentation</h2>
           <p className={`text-lg`}>
             {`DB Cargo France, filiale du leader européen DB Cargo du groupe Deutsche Bahn, offre des services de fret
             ferroviaire axés sur la fiabilité, l'efficacité et la durabilité. Elle propose des solutions logistiques
@@ -30,38 +30,30 @@ const Entreprise = () => {
       </Section>
       <Section>
         <div className={`flex flex-col items-center gap-5`}>
-          <h2 className={`text-success text-3xl font-bold`}>L'organigrame du DSI</h2>
+          <h2 className={`mb-12 text-success text-3xl font-bold`}>L'organigrame du DSI</h2>
           <Image alt={`organigrame`} src={`/Organigrame.png`} width={600} height={600} />
         </div>
       </Section>
       <Section className={`bg-success`}>
-        <div className={`flex flex-col items-center gap-5`}>
-          <h1 className={`text-primary-50 text-3xl font-bold`}>Mes missions</h1>
-          <p>
-            J'ai travaillé essentiellement avec le Gestionnaire Infrastructure.
-            La plupart de mes missions portaient sur du support de niveau 1 et 2. Mais j'ai eut l'occasion
-            d'intervenir sur des projets d'infra, base de données et même de développement.
-          </p>
-        </div>
+        <h1 className={`mb-12 text-primary-50 text-3xl font-bold`}>Mes missions</h1>
         
-        <Section full>
+        <div className=' w-full'>
           <div className={`columns-1 md:columns-2 gap-8`}>
             { missionsData.map((mission, index) => {
               return (
-                <Card key={index} className={`px-1 py-4 md:hover:scale-[101%] hover:cursor-default`}>
-                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                    <h3 className={`text-primary-500 text-2xl font-bold`}>{mission.title}</h3>
-                  </CardHeader>
-                  <CardBody className="overflow-visible py-2">
-                    <p className={`text-primary text-medium`}>
-                      {mission.content}
-                    </p>
-                  </CardBody>
-                </Card>
+                <Mission key={index} title={mission.title} description={mission.content} />
               )
             })}
           </div>
-        </Section>
+        </div>
+      </Section>
+
+      <Section>
+        <h1 className={`mb-12 text-success text-3xl font-bold`}> Ce que j'ai appris ce cette expérience </h1>
+
+        <div>
+          blablabla
+        </div>
       </Section>
     </>
   )
