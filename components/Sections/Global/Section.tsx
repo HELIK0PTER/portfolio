@@ -7,7 +7,8 @@ interface props {
   full?: boolean;
 }
 
-export const Section = ({children, className, full=false}:props) => {
+export const
+  Section = ({children, className, full=false}:props) => {
   return (
     <div
     className={twMerge(`
