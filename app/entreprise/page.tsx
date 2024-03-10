@@ -47,14 +47,6 @@ const Entreprise = () => {
           </div>
         </div>
       </Section>
-
-      <Section>
-        <h1 className={`mb-12 text-success text-3xl font-bold`}> Ce que j'ai appris ce cette expérience </h1>
-
-        <div>
-          blablabla
-        </div>
-      </Section>
     </>
   )
 }

@@ -1,28 +1,23 @@
 "use client";
 import React, {useEffect, useState} from 'react';
-import { Article } from '@/components/veille-components/Article';
+import { Article } from '@/app/veille/Article';
 import { veilleData } from '@/lib/veilleData';
 import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 
 const tris = [
   {
-    index: 0,
     value: 'aucun',
   },
   {
-    index: 1,
     value: 'note: croissant',
   },
   {
-    index: 2,
     value: 'note: decroissant',
   },
   {
-    index: 3,
     value: 'recents',
   },
   {
-    index: 4,
     value: 'anciens',
   },
 ];
@@ -49,7 +44,7 @@ export const Articles: React.FC = () => {
         <Select
           label="Trier par :"
           labelPlacement={"outside-left"}
-          className="max-w-xs"
+          className="max-w-xs font-semibold"
           selectedKeys={[ordering]}
           onChange={handleSelectionChange}
         >

@@ -18,26 +18,38 @@ const Realisation = () => {
     if (realisations === 'ALL') return realisation
     else return realisation.value === realisations;
   })
-  
+
   return (
     <>
       <Hero>
-        <h1 className={`text-primary-200 text-4xl`}>
-            Réalisations
+        <h1 className={`text-success text-4xl`}>
+            Mes Réalisations
         </h1>
         <h2 className={`text-primary-400 text-opacity-70 text-2xl`}>
           Professionnelles, Scolaire et Personnelles
         </h2>
       </Hero>
-      <Section className={`bg-gray-950 min-h-[400px]`}>
-        <div className={`flex justify-start gap-4`}>
-          <button onClick={() => setRealisations('ALL')} className={`text-primary-100 text-medium`}>Tout</button>
-          <button onClick={() => setRealisations('PRO')} className={`text-primary-100 text-medium`}>Professionnelles
-          </button>
-          <button onClick={() => setRealisations('SCOLAIRE')} className={`text-primary-100 text-medium`}>Scolaire
-          </button>
-          <button onClick={() => setRealisations('PERSO')} className={`text-primary-100 text-medium`}>Personnelles
-          </button>
+      <Section className={`bg-success min-h-[400px]`}>
+        <div className={`flex justify-start font-bold bg-primary-100 mb-5 rounded-md text-primary`}>
+          <button onClick={() => setRealisations('ALL')} 
+          className={`p-3 rounded-s-md text-medium md:hover:bg-success-100 transition duration-250`}
+          {...realisations === 'ALL' && {className: 'p-3 rounded-s-md text-medium bg-success-100'}}
+          >Tout</button>
+          <Divider orientation="vertical" />
+          <button onClick={() => setRealisations('PRO')} 
+          className={`p-3 text-medium md:hover:bg-success-100 transition duration-250`}
+          {...realisations === 'PRO' && {className: 'p-3 text-medium bg-success-100'}}
+          >Professionnelles</button>
+          <Divider orientation="vertical" />
+          <button onClick={() => setRealisations('SCOLAIRE')} 
+          className={`p-3 text-medium md:hover:bg-success-100 transition duration-250`}
+          {...realisations === 'SCOLAIRE' && {className: 'p-3 text-medium bg-success-100'}}
+          >Scolaire</button>
+          <Divider orientation="vertical" />
+          <button onClick={() => setRealisations('PERSO')} 
+          className={`p-3 rounded-e-md text-medium md:hover:bg-success-100 transition duration-100`}
+          {...realisations === 'PERSO' && {className: 'p-3 rounded-e-md text-medium bg-success-100'}}
+          >Personnelles</button>
         </div>
         
         <Masonry columns={{xs: 1, md: 3}} spacing={2}>
@@ -47,10 +59,10 @@ const Realisation = () => {
               <div key={index}>
                 <Card className="py-4 hover:scale-[102%] hover:cursor-pointer">
                   <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                    <p className="text-large uppercase font-bold">{realisation.title}</p>
+                    <p className="text-large uppercase font-bold text-primary">{realisation.title}</p>
                   </CardHeader>
                   <CardBody>
-                    <p className={`text-medium text-primary-100 text-opacity-70`}>{realisation.description}</p>
+                    <p className={`text-medium text-opacity-70`}>{realisation.description}</p>
                   </CardBody>
                 </Card>
               </div>
