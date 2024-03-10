@@ -21,8 +21,8 @@ const TextAdventure = () => {
           </Button>
         </div>
 
-        <h1 className={`text-3xl font-bold text-primary`}>{lib?.title}</h1>
-        <p className={`font-normal text-primary-100`}>{lib?.description}</p>
+        <h1 className={`text-4xl font-semibold text-success`}>{lib?.title}</h1>
+        <p>{lib?.description}</p>
         <Image alt={`image`} src={lib?.img ?? '/'} width={800} height={800} className={`rounded-2xl`}/>
 
       </Section>

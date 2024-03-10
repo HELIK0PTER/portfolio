@@ -24,7 +24,7 @@ export const Article: React.FC<ArticleProps> = ({
   let stars = (note: number) => {
     let stars = [];
     for (let i = 0; i < note; i++) {
-      stars.push(<span key={i} className="text-primary-200">★</span>);
+      stars.push(<span key={i} className="text-primary">★</span>);
     }
     return stars;
   }
@@ -34,7 +34,8 @@ export const Article: React.FC<ArticleProps> = ({
       <Card onClick={onOpen} isPressable={true} fullWidth={true} className="py-4 hover:scale-[102%] hover:cursor-pointer">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">{title}</p>
-          <small className="text-default-500"> {stars(note)} </small>
+          {/* pour modifier le style des étoiles voir la fonction au dessus */}
+          <small> {stars(note)} </small>
         </CardHeader>
         <CardBody className="overflow-visible py-2">
           <Image

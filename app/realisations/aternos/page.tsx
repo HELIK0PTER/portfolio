@@ -11,8 +11,7 @@ import {Section} from "@/components/Sections/Global/Section";
 const Aternos = () => {
   const lib = realisationsData.find((realisation) => realisation.link === '/aternos')
   return(
-    <div className={`relative w-full`}>
-      <Section>
+      <Section full={true} className={`relative`}>
         <div className={`absolute top-10 left-10`}>
           <Button isIconOnly color="danger" aria-label="Back"
             onPress={() => window.history.back()}
@@ -20,13 +19,26 @@ const Aternos = () => {
             <FaArrowLeft/>
           </Button>
         </div>
-
-        <h1 className={`text-3xl font-bold text-primary`}>{lib?.title}</h1>
-        <p className={`font-normal text-primary-100`}>{lib?.description}</p>
-        <Image alt={`image`} src={lib?.img ?? '/'} width={800} height={800} className={`rounded-2xl`}/>
-
+        
+        <Section>
+          <h1 className={`text-4xl font-semibold text-success`}>{lib?.title}</h1>
+          <p>{lib?.description}</p>
+        </Section>
+        
+        <Section full={true}>
+          <div className={`flex flex-row gap-10 mx-20 p-10 bg-success rounded-xl`}>
+            <div>
+              <p className={`mb-6`}>Mon clone:</p>
+              <Image alt={`image`} src={lib?.img ?? '/'} width={800} height={800} className={`rounded-2xl`}/>
+            </div>
+            <div>
+              <p className={`mb-6`}>Vrai site:</p>
+              <Image alt={`image`} src={lib?.img ?? '/'} width={800} height={800} className={`rounded-2xl`}/>
+            </div>
+          </div>
+        </Section>
+      
       </Section>
-    </div>
   )
 }
 
