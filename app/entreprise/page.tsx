@@ -41,7 +41,7 @@ const Entreprise = () => {
           <div className={`columns-1 md:columns-2 gap-8`}>
             { missionsData.map((mission, index) => {
               return (
-                <Mission key={index} title={mission.title} description={mission.content} />
+                <Mission key={index} title={mission.title} content={mission.content} outils={mission.outils} annee={mission.annee}/>
               )
             })}
           </div>

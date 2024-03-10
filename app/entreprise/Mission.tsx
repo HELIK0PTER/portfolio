@@ -1,55 +1,48 @@
 'use client'
 
 import { CardContent } from "@mui/material";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
-import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import {useDisclosure} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
 
 interface MissionProps {
   title: string;
-  description: string;
-  image?: string | "public/images/react.png";
+  content: string;
+  outils: string[];
+  annee: string;
 }
 
 export const Mission: React.FC<MissionProps> = ({
   title,
-  description,
-  image,
+  content,
+  outils,
+  annee,
 }) => {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   
   return (
     <>
-      <Card onClick={onOpen} isPressable={true} fullWidth={true} className="py-4 hover:scale-[102%] hover:cursor-pointer">
+      <Card fullWidth={true} className="py-4 mb-6">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <p className="text-tiny uppercase font-bold">{title}</p>
+          <p className="text-large uppercase font-bold text-primary">{title}</p>
         </CardHeader>
         <CardBody className="overflow-visible py-2">
           <CardContent>
-            
+            { content}
           </CardContent>
         </CardBody>
+        <CardFooter className="flex flex-col items-start py-0">
+          <p className="text-tiny text-success mx-2">Outils utilisés:</p>
+          <div className="flex flex-wrap ">
+            { outils.map((outil, index) => {
+              return (
+                <Card key={index} className="text-tiny p-1 m-1 rounded-md shadow-none border-primary border-1">
+                  {outil}
+                </Card>
+              )
+            }, [])}
+          </div>
+        </CardFooter>
       </Card>
-      
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
-              <ModalBody className={`flex items-center text-center`}>
-                <p>
-                  {description}
-                </p>
-                  <Image
-                    alt="Card background"
-                    className="object-cover rounded-xl"
-                    src={`/veille/` + image}
-                    width={270}
-                  />
-              </ModalBody>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
     </>
   );
 };

@@ -12,12 +12,12 @@ interface ArticleProps {
 }
 
 export const Article: React.FC<ArticleProps> = ({
-                                                  title,
-                                                  note,
-                                                  description,
-                                                  image,
-                                                  link,
-                                                }) => {
+  title,
+  note,
+  description,
+  image,
+  link,
+}) => {
   
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   

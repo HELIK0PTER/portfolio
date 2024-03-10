@@ -1,21 +1,20 @@
 export const missionsData = [
   {
-    title: "Gestion Tickets",
-    content: `Nous ne possedons pas de logiciels de gestion de tickets, mais j'ai tout de même essayé de proposer 
-              une solution de gestion de tickets en utilisant les outils que nous possedons déjà, c'est a dire
-              OutLook. 
-              Nous gérons les attributions avec les flags dans la boite mail partagée mais malheureusement, nous ne
-              pouvons pas avoir de suivi sur les tickets.`,
-    outils: ["Outlook"],
-    annee: [1, 2]
+    title: "Support niveau 1 et 2",
+    content: `Traitement de la demande des utilisateurs, et résolution des incidents sur place ou en prise en main à distance.`,
+    outils: ["Outlook", "Windows", "Office", "Active Directory", "Logiciels internes"],
+    annee: "1ère et 2ème année",
   },
   {
-    title: "Support niveau 1",
-    content: `Traitement de la demande des utilisateurs, résolution des problèmes de niveau 1, dans la mesure du 
-    possible. C'est a dire que nôtre réseau, nos serveurs et nos matériels nous sont délivrés par le groupe mère en
-    Allemagne (DB Systel) et que nous n'avons pas la main sur la plupart des problèmes. (notamment leur logiciel de
-    ticketing)`,
-    outils: ["Outlook", "Windows", "Office"],
-    annee: 2
+    title: "Gestion de la flotte informatique",
+    content: `Installation, maintenance et suivi des équipements informatiques, téléphoniques et des logiciels.`,
+    outils: ["Windows", "Office", "Active Directory", "Logiciels internes"],
+    annee: "1ère et 2ème année",
   },
+  {
+    title: "Gestion de projet",
+    content: `Participation à la gestion et a la realisations de projets informatiques.`,
+    outils: ["Teams", "Task Planner", "Notion", "Excel", "Logiciels internes"],
+    annee: "2ème année",
+  }
 ];
