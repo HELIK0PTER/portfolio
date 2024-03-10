@@ -5,6 +5,7 @@ import {realisationsData} from "@/lib/realisationsData";
 import Image from 'next/image'
 
 import {Button} from "@nextui-org/react";
+import {Divider} from "@nextui-org/react";
 import {FaArrowLeft} from "react-icons/fa";
 import {Section} from "@/components/Sections/Global/Section";
 
@@ -29,11 +30,12 @@ const Aternos = () => {
           <div className={`flex flex-col md:flex-row gap-10 md:mx-20 p-10 bg-success md:rounded-xl`}>
             <div>
               <p className={`mb-6`}>Mon clone:</p>
-              <Image alt={`image`} src={lib?.img ?? '/'} width={800} height={800} className={`rounded-2xl`}/>
+              <Image alt={`image`} src={`/Aternos.png`} width={800} height={800} className={`rounded-2xl`}/>
             </div>
+            <Divider className={`md:hidden font-semibold bg-primary-800`} />
             <div>
               <p className={`mb-6`}>Vrai site:</p>
-              <Image alt={`image`} src={lib?.img ?? '/'} width={800} height={800} className={`rounded-2xl`}/>
+              <Image alt={`image`} src={`/RealAternos.png`} width={800} height={800} className={`rounded-2xl`}/>
             </div>
           </div>
         </Section>
