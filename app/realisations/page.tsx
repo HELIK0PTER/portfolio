@@ -7,10 +7,11 @@ import {realisationsData} from "@/lib/realisationsData";
 
 import {Hero} from "@/components/Sections/Global/Hero";
 import {Section} from "@/components/Sections/Global/Section";
-import {Card, CardBody, CardHeader, Divider} from "@nextui-org/react";
+import {Card, CardBody, CardFooter, CardHeader, Divider} from "@nextui-org/react";
 import { Masonry } from "@mui/lab"
 import {useRouter} from "next/navigation";
 import {Select, SelectItem} from "@nextui-org/react";
+import Image from 'next/image'
 
 const Realisation = () => {
   
@@ -40,6 +41,7 @@ const Realisation = () => {
         </h2>
       </Hero>
       <Section className={`bg-success min-h-[400px]`}>
+
         <div className={`hidden md:flex justify-start font-bold bg-primary-100 mb-5 rounded-md text-primary`}>
           <button onClick={() => setRealisations('ALL')} 
           className={`p-3 rounded-s-md text-medium md:hover:bg-success-100 transition duration-250`}
@@ -81,13 +83,27 @@ const Realisation = () => {
           {filteredRealisations.map((realisation, index) => {
             return (
               <div key={index}>
-                <Card onClick={() => router.push(`/realisations/${realisation.link}`)} isPressable={true} className="py-4 hover:scale-[102%] hover:cursor-pointer">
-                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                <Card onClick={() => router.push(`/realisations/${realisation.link}`)} isPressable={true} className="p-1 hover:scale-[102%] hover:cursor-pointer">
+                  <CardHeader className="py-4 px-4 flex-col items-start">
                     <p className="text-large uppercase font-bold text-primary">{realisation.title}</p>
                   </CardHeader>
+                  <Divider />
                   <CardBody>
-                    <p className={`text-medium text-opacity-70`}>{realisation.description}</p>
+                    <Image alt={'image'} src={realisation.img} width={1000} height={1000} className={`flex justify-center w-full rounded-md`} />
+                    <p className={`text-medium text-opacity-70 mt-2`}>{realisation.description}</p>
                   </CardBody>
+                  <Divider />
+                  <CardFooter>
+                    <p className={`text-medium text-opacity-70`}>
+                      Outils : {realisation.outils.map((outil, index) => {
+                        return (
+                          <span key={index} className={`text-primary-400`}>
+                            {outil}{index < realisation.outils.length - 1 ? ', ' : ''}
+                          </span>
+                        )})
+                      }
+                    </p>
+                  </CardFooter>
                 </Card>
               </div>
             )

@@ -4,9 +4,9 @@ import React from "react";
 import Image from 'next/image'
 
 import {Hero} from "@/components/Sections/Global/Hero";
-import {SchoolSection} from "@/components/Sections/Home/SchoolSection";
-import {ProfessionalSection} from "@/components/Sections/Home/ProfessionalSection";
-import {Langages} from "@/components/Sections/Home/Langages";
+import {SchoolSection} from "@/components/Sections/app/SchoolSection";
+import {ProfessionalSection} from "@/components/Sections/app/ProfessionalSection";
+import {Langages} from "@/components/Sections/app/Langages";
 import {Section} from "@/components/Sections/Global/Section";
 
 export default function Home() {
