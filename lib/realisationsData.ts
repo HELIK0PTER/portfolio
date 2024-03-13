@@ -22,7 +22,7 @@ export const realisationsData = [
     description: `Projet scolaire qui consiste à créer un site web qui permet de trouver des jeux vidéos à l'aide
                   d'une API. Nous avons utilisé l'API RAWG pour ce projet.`,
     link: '/gaming-explorer',
-    img: imgPath + '/gamingExplorer/GamingExplorer.png',
+    img: imgPath + '/gamingExplorer/gamingExplorer.png',
     outils: ['Nextjs', 'Tailwindcss', 'Typescript'],
     personnes: 3,
   },
