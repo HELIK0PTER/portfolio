@@ -87,11 +87,13 @@ const Realisation = () => {
                             className="p-1 hover:scale-[102%] hover:cursor-pointer">
                         <CardHeader className="flex py-4 px-4 justify-between">
                           <p className="text-large uppercase font-bold text-primary">{realisation.title}</p>
-                          <div className={`flex items-center gap-1`}>{realisation.personnes} <IoPerson/></div>
+                          {realisation.personnes && realisation.personnes > 1 &&
+                            <div className={`flex items-center gap-1`}>{realisation.personnes} <IoPerson/></div>
+                          }
                         </CardHeader>
                         <Divider/>
                         <CardBody>
-                          <Image alt={'image'} src={realisation.img} width={1000} height={1000}
+                        <Image alt={'image'} src={realisation.img} width={1000} height={1000}
                                  className={`flex justify-center w-full rounded-md`}/>
                           <p className={`text-medium text-opacity-70 mt-2`}>{realisation.description}</p>
                         </CardBody>
