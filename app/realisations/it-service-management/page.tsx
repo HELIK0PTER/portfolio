@@ -1,6 +1,6 @@
 'use client'
 
-import {realisationsData} from "@/lib/realisationsData";
+import {realisationsData} from "@/app/realisations/realisationsData";
 
 import {DefaultRealisation} from "@/components/Sections/realisations/DefaultRealisation"
 

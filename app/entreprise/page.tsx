@@ -12,7 +12,7 @@ const Entreprise = () => {
     <>
       <Hero className={``}>
         <Section className={`relative flex flex-col max-h-[100vh]`}>
-            <Image alt={`logo DB`} src={`/entreprise/DB-Cargo-website.png`} width={900} height={900} />
+            <Image alt={`logo DB`} src={``} width={900} height={900} />
         </Section>
       </Hero>
       <Section className={`bg-success`}>

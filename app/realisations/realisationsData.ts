@@ -12,7 +12,7 @@ export const realisationsData = [
                   d'une API. Nous avons utilisé l'API RAWG pour ce projet.`,
     link: '/gaming-explorer',
     img: imgPath + '/gamingExplorer/gamingExplorer.png',
-    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript'],
+    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript', 'FireBase'],
     personnes: 3,
   },
   {
@@ -78,7 +78,7 @@ export const realisationsData = [
   {
     value: PRO,
     title: "Montage d'une baie de brassage",
-    description: `Projet professionnel qui consiste à monter une baie de brassage dans une des agences de l'entreprise.
+    description: `Mission professionnelle qui consiste à monter une baie de brassage dans une des agences de l'entreprise.
                   J'ai simplement été chargé de monter les équipements dans la baie. (branchement, fixation, etc...)`,
     link: '/baie-brassage',
     img: imgPath + '/baieBrassage/BaieBrassage.png',

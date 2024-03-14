@@ -15,3 +15,9 @@
 p {
 	@apply font-medium;
 }
+
+/* variables des couleurs */
+:root {
+	--color-primary: #b476ff;
+	--color-success: #18C964;
+}
