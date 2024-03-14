@@ -12,7 +12,7 @@ const Entreprise = () => {
     <>
       <Hero className={``}>
         <Section className={`relative flex flex-col max-h-[100vh]`}>
-            <Image alt={`logo DB`} src={`/DB-Cargo-website.png`} width={900} height={900} />
+            <Image alt={`logo DB`} src={`/entreprise/DB-Cargo-website.png`} width={900} height={900} />
         </Section>
       </Hero>
       <Section className={`bg-success`}>
@@ -31,14 +31,14 @@ const Entreprise = () => {
       <Section>
         <div className={`flex flex-col items-center gap-5`}>
           <h2 className={`mb-12 text-success text-3xl font-bold`}>L'organigrame du DSI</h2>
-          <Image alt={`organigrame`} src={`/Organigrame.png`} width={600} height={600} />
+          <Image alt={`organigrame`} src={`/entreprise/Organigrame.png`} width={600} height={600} />
         </div>
       </Section>
       <Section className={`bg-success`}>
-        <h1 className={`mb-12 text-primary-50 text-3xl font-bold`}>Mes missions</h1>
+        <h1 className={`mb-12 text-primary-50 text-3xl font-bold`}>Mon quotidien</h1>
         
         <div className=' w-full'>
-          <div className={`columns-1 md:columns-2 gap-8`}>
+          <div className={`columns-1 md:columns-2 lg:columns-3 gap-8`}>
             { missionsData.map((mission, index) => {
               return (
                 <Mission key={index} title={mission.title} content={mission.content} outils={mission.outils} annee={mission.annee}/>

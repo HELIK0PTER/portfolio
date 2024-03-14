@@ -3,14 +3,16 @@ import {twMerge} from "tailwind-merge";
 
 interface props {
   children?: React.ReactNode;
+  id?: string;
   className?: string;
   full?: boolean;
 }
 
 export const
-  Section = ({children, className, full=false}:props) => {
+  Section = ({children, id, className, full=false}:props) => {
   return (
     <div
+    id={id}
     className={twMerge(`
     flex flex-col justify-start items-center gap-4 w-full 
     text-lg font-normal text-center   

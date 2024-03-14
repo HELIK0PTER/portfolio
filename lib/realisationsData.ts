@@ -6,34 +6,74 @@ const imgPath = '/realisations'
 
 export const realisationsData = [
   {
-    value: PERSO,
-    title: 'Clone de Aternos',
-    description: `Projet qui m'a servi à approfondir mes compétences en Nextjs. Il s'agit d'un clone du site Aternos, 
-                  un site qui permet de créer un serveur Minecraft gratuitement. 
-                  Je n'ai essayé de reproduire que la page d'accueil.`,
-    link: '/aternos',
-    img: imgPath + '/aternos/Aternos.png',
-    outils: ['Nextjs', 'Tailwindcss', 'Typescript'],
-    personnes: 1,
-  },
-  {
     value: SCOLAIRE,
     title:'Gaming Explorer',
     description: `Projet scolaire qui consiste à créer un site web qui permet de trouver des jeux vidéos à l'aide
                   d'une API. Nous avons utilisé l'API RAWG pour ce projet.`,
     link: '/gaming-explorer',
     img: imgPath + '/gamingExplorer/gamingExplorer.png',
-    outils: ['Nextjs', 'Tailwindcss', 'Typescript'],
+    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript'],
     personnes: 3,
   },
   {
-    value: PRO,
-    title: "Montage d'une baie de brassage",
-    description: `Projet professionnel qui consiste à monter une baie de brassage dans une des agences de l'entreprise.
-                  J'ai simplement été chargé de monter les équipements dans la baie. (branchement, fixation, etc...)`,
-    link: '/baie-brassage',
-    img: imgPath + '/baieBrassage/BaieBrassage.jpg',
-    annee: 1,
+    value: SCOLAIRE,
+    title: "ChessGame",
+    description: `Projet scolaire qui consiste à créer un jeu d'échec sur navigateur.
+                  Il est possible de disputer une partie contre l'ordinateur ou contre un autre joueur et
+                  les scores sont enregistrés.`,
+    link: '/chess-game',
+    img: imgPath + '/chessGame/ChessGame.png',
+    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript', "Git"],
+  },
+  {
+    value: SCOLAIRE,
+    title: "Motorized Wide Area",
+    description: `Projet scolaire qui consiste à créer une application pour une entreprise de location de voitures.
+                  L'application permet de gérer les locations, les clients, les voitures, etc...`,
+    link: '/motorized-wide-area',
+    img: imgPath + '/motorizedWideArea/MotorizedWideArea.png',
+    outils: ["Java", "JavaFX", "MySQL", "Figma", "Git", "Jira"],
+    personnes: 3,
+  },
+  {
+    value: SCOLAIRE,
+    title: "Projet Rugby",
+    description: `Projet de creation d'une API ORM avec Django pour le site d'une compétition de rugby.
+                  L'API avait son propre site web, et le site de la compétition servait de billéterie.`,
+    link: '/projet-rugby',
+    img: imgPath + '/projetRugby/ProjetRugby.png',
+    outils: ["Django", "Python", "SQL", "Figma", "Git", "Jira", "Nextjs", "Tailwindcss", "Typescript"],
+  },
+  {
+    value: SCOLAIRE,
+    title: "Portfolio (ce même site)",
+    description: `Projet personnel qui consiste à créer mon portfolio. Il contient notamment mes realisations,
+                  mes compétences en informatique, mon parcours, une page de veille technologique, etc...
+                  J'en ait beaucoup appris sur Nextjs et Tailwindcss et sur la gestion de version sur Git.`,
+    link: '/portfolio',
+    img: imgPath + '/portfolio/Portfolio.png',
+    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript',"Git", "Vercel"],
+  },
+  {
+    value: PERSO,
+    title: 'Clone de Aternos',
+    description: `C'est le premier projet que j'ai commencé moi même en NextJS. Il m'a servi à approfondir mes
+                  compétences dans ce langage de programmation. Il s'agit d'une copie de la page
+                  d'accueil du site Aternos.`,
+    link: '/aternos',
+    img: imgPath + '/aternos/Aternos.png',
+    outils: ['Nextjs', 'React','Tailwindcss', 'Typescript'],
+  },
+  {
+    value: PERSO,
+    title: "Tati Lissages",
+    description: `J'ai créé ce site web pour ma mère. Il s'agit d'un site vitrine
+                  qui présente ses services, ses tarifs, ses horaires, etc... car ma mère est coiffeuse
+                  à son compte. (j'ai pour projet d'améliorer ce site en y ajoutant un système de prise de rendez-vous
+                  et un système de paiement en ligne)`,
+    link: '/tati-lissages',
+    img: imgPath + '/tatiLissages/TatiLissages.png',
+    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript', 'Figma', 'Git', 'Vercel'],
   },
   {
     value: PRO,
@@ -41,17 +81,103 @@ export const realisationsData = [
     description: `Projet professionnel qui consiste à monter une baie de brassage dans une des agences de l'entreprise.
                   J'ai simplement été chargé de monter les équipements dans la baie. (branchement, fixation, etc...)`,
     link: '/baie-brassage',
-    img: imgPath + '/baieBrassage/BaieBrassage.jpg',
+    img: imgPath + '/baieBrassage/BaieBrassage.png',
+    personnes: 2,
     annee: 1,
   },
   {
     value: PRO,
-    title: "Montage d'une baie de brassage",
-    description: `Projet professionnel qui consiste à monter une baie de brassage dans une des agences de l'entreprise.
+    title: "Generation de scripts VBA pour générer des scripts SQL",
+    description: `Projet professionnel qui consiste à mettre en place un serveur dans une des agences de l'entreprise.
                   J'ai simplement été chargé de monter les équipements dans la baie. (branchement, fixation, etc...)`,
-    link: '/baie-brassage',
-    img: imgPath + '/baieBrassage/BaieBrassage.jpg',
+    link: '/sql-vba',
+    img: imgPath + '/sql-vba/SqlVba.png',
+    outils: ["VBA", "SQL", "Excel", "Oracle ApEx"],
+    annee: 1,
+  },
+  {
+    value: PRO,
+    title: "Gestion de la flotte informatique",
+    description: `Mise a jour et maintenance de la base des équipements informatiques de l'entreprise.`,
+    link: '/gestion-flotte-informatique',
+    img: imgPath + '/gestionFlotteInformatique/GestionFlotteInformatique.png',
+    outils: ["Excel", "Oracle ApEx", "Logiciel interne sous Oracle"],
+    annee: 1,
+  },
+  {
+    value: PRO,
+    title: "Traitement des demandes des utilisateurs et interventions a distance ou sur site",
+    description: `Traitement des demandes des utilisateurs de l'entreprise. N'ayant pas d'ITSM, nous utilisions Outlook.
+                  (création de compte, commande de logiciels/matériels, interventions sur les postes etc...)`,
+    link: '/traitement-demandes-utilisateurs',
+    img: imgPath + '/traitementDemandesUtilisateurs/TraitementDemandesUtilisateurs.png',
+    outils: ["Outlook", "Autres logiciels internes", "Notion"],
+    annee: 1,
+  },
+  {
+    value: PRO,
+    title: "Operation de recyclage des équipements informatiques",
+    description: `Mise en place d'une operation de recyclage des équipements informatiques de l'entreprise qui
+                  encombraient les locaux.`,
+    link: '/recyclage-equipements-informatiques',
+    img: imgPath + '/recyclageEquipementsInformatiques/RecyclageEquipementsInformatiques.png',
+    annne: 1,
+    personnes: 2,
+  },
+  {
+    value: PRO,
+    title: "Renouvellement de la flotte des ordinateurs",
+    description: `Mission consistant à suivre le renouvellement de la flotte des ordinateurs de l'entreprise et
+                  accompagner les utilisateurs dans la prise en main de leur nouvel ordinateur.
+                  (mise en place de la migration des données, installation des logiciels, écriture de processus,etc...)`,
+    link: '/renouvellement-flotte-ordinateurs',
+    img: imgPath + '/renouvellementFlotteOrdinateurs/RenouvellementFlotteOrdinateurs.png',
+    outils: ["Outlook", "Excel", "Oracle ApEx", "Logiciel interne sous Oracle"],
     annee: 2,
-    outils: ['Nextjs', 'Tailwindcss', 'Typescript'],
   },
+  {
+    value: PRO,
+    title: "Travail sur le projet de mise en place d'un ITSM",
+    description: `Travail sur le projet de mise en place d'un ITSM.
+                  Test de plusieurs logiciels, proposition de processus, liste des besoins, etc...
+                  Fonctionnement temporaire sous Notion.`,
+    link: '/it-service-management',
+    img: imgPath + '/itServiceManagement/ItServiceManagement.png',
+    outils: ["Notion", "Outils Microsoft (teams, planner, etc...)","Autres logiciels internes"],
+    annee: 2,
+    personnes: 5,
+  },
+  {
+    value: PRO,
+    title: "Migration de données du wiki interne vers le nouveau wiki",
+    description: `Le nouveau wiki étant un nouveau site avec sa propre structure, je travaille aussi
+                  sur la restructuration des données pour qu'elles soient plus claires et plus faciles à trouver.
+                  (réunions avec les différents services, liste des besoins,création de processus, cahiers des charges, etc...)`,
+    link: '/migration-wiki',
+    img: imgPath + '/migrationWiki/MigrationWiki.png',
+    outils: ["Outils Microsoft (teams, planner, etc...)","Site du nouveau wiki"],
+    annee: 2,
+    personnes: 2,
+  },
+  {
+    value: PRO,
+    title: "Attributions de drois applicatifs (application interne)",
+    description: `Attribution de drois applicatifs pour les utilisateurs de l'entreprise. Creation aussi de processus
+                  pour une attibution de droits plus fluide.
+                  (sans demander quels droits l'utilisateur a besoin à chaque fois)`,
+    link: '/attribution-droits-applicatifs',
+    img: imgPath + '/attributionDroitsApplicatifs/AttributionDroitsApplicatifs.png',
+    annee: 2,
+  },
+  {
+    value: PRO,
+    title: "Configuration VMware pour les logiciels de maintenance",
+    description: `Configuration de VMware pour les logiciels de maintenance des pc des techniciens car
+                  les logiciels sont externes et ne sont pas installés automatiquement via l'auto-installer interne.
+                  (gain de temps énorme pour les techniciens)`,
+    link: '/configuration-vmware',
+    img: imgPath + '/configurationVmware/ConfigurationVmware.png',
+    outils: ["VMware", "Outils Microsoft (teams, planner, etc...)"],
+    annee: 2,
+  }
 ]

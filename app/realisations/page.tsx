@@ -5,7 +5,7 @@ import React from 'react'
 import {realisationsData} from "@/lib/realisationsData";
 import {Hero} from "@/components/Sections/Global/Hero";
 import {Section} from "@/components/Sections/Global/Section";
-import {Card, CardBody, CardFooter, CardHeader, Divider} from "@nextui-org/react";
+import {Button, Card, CardBody, CardFooter, CardHeader, Divider} from "@nextui-org/react";
 import { Masonry } from "@mui/lab"
 import {useRouter} from "next/navigation";
 import {Select, SelectItem} from "@nextui-org/react";
@@ -16,7 +16,8 @@ const Realisation = () => {
   
   const [realisations, setRealisations] =
   React.useState<'ALL' | 'PRO' | 'PERSO' | 'SCOLAIRE'>('ALL')
-  
+  // sert a tracker la hauteur en pixels de la section des realisations (id: realisations)
+
   const handleSelectionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     // @ts-ignore
     setRealisations(e.target.value);
@@ -26,6 +27,11 @@ const Realisation = () => {
     if (realisations === 'ALL') return realisation
     else return realisation.value === realisations;
   })
+  
+  const onButtonClick = () => {
+    // @ts-ignore
+    return document.getElementById('realisations').offsetTop
+  }
   
   const router = useRouter();
 
@@ -39,7 +45,12 @@ const Realisation = () => {
           Professionnelles, Scolaire et Personnelles
         </h2>
       </Hero>
-      <Section full className={`bg-success min-h-[400px]`}>
+      <div>
+      <Section id={"realisations"} full className={`group relative bg-success min-h-[400px]`}>
+        
+        <div className={`lg:absolute right-40
+          bg-primary-100 p-3 rounded-md text-primary`}
+        >Count: {filteredRealisations.length}</div>
 
         <div className={`hidden md:flex justify-start font-bold bg-primary-100 mb-5 rounded-md text-primary`}>
           <button onClick={() => setRealisations('ALL')} 
@@ -77,60 +88,60 @@ const Realisation = () => {
           <SelectItem key="PERSO" value="PERSO">Personnelles</SelectItem>
         </Select>
           
-          {realisations != "PRO" &&
-            <div className={`w-3/4`}>
-              <Masonry columns={{xs: 1, md:2, lg: 3}} spacing={2}>
-                {filteredRealisations.map((realisation, index) => {
-                  return (
-                    <div key={index}>
-                      <Card onClick={() => router.push(`/realisations/${realisation.link}`)} isPressable={true}
-                            className="p-1 hover:scale-[102%] hover:cursor-pointer">
-                        <CardHeader className="flex py-4 px-4 justify-between">
-                          <p className="text-large uppercase font-bold text-primary">{realisation.title}</p>
-                          {realisation.personnes && realisation.personnes > 1 &&
-                            <div className={`flex items-center gap-1`}>{realisation.personnes} <IoPerson/></div>
-                          }
-                        </CardHeader>
-                        <Divider/>
-                        <CardBody>
-                        <Image alt={'image'} src={realisation.img} width={1000} height={1000}
-                                 className={`flex justify-center w-full rounded-md`}/>
-                          <p className={`text-medium text-opacity-70 mt-2`}>{realisation.description}</p>
-                        </CardBody>
-                        {realisation.outils &&
-                          <>
-                          <Divider/>
-                          <CardFooter>
-                            <p className={`text-medium text-opacity-70`}>
-                                Outils: {realisation.outils.map((outil, index) => {
-                                  return (
-                                    <span key={index} className={`text-primary-400`}>
-                                        {outil}{index < realisation.outils.length - 1 ? ', ' : ''}
-                                    </span>
-                                  )
-                            })}
-                            </p>
-                          </CardFooter>
-                          </>
+        {realisations != "PRO" &&
+          <div className={`w-3/4`}>
+            <Masonry columns={{xs: 1, md:2, lg: 3}} spacing={2}>
+              {filteredRealisations.map((realisation, index) => {
+                return (
+                  <div key={index}>
+                    <Card onClick={() => router.push(`/realisations/${realisation.link}`)} isPressable={true}
+                          className="p-1 md:hover:scale-[102%] hover:cursor-pointer">
+                      <CardHeader className="flex py-4 px-4 justify-between">
+                        <p className="text-large uppercase font-bold text-primary">{realisation.title}</p>
+                        {realisation.personnes && realisation.personnes > 1 &&
+                          <div className={`flex items-center gap-1`}>{realisation.personnes} <IoPerson/></div>
                         }
-                      </Card>
-                    </div>
-                  )
-                })}
-              </Masonry>
-            </div>
-          }
+                      </CardHeader>
+                      <Divider/>
+                      <CardBody>
+                      <Image alt={'image'} src={realisation.img} width={1000} height={1000}
+                               className={`flex justify-center w-full rounded-md`}/>
+                        <p className={`text-medium text-opacity-70 mt-2`}>{realisation.description}</p>
+                      </CardBody>
+                      {realisation.outils &&
+                        <>
+                        <Divider/>
+                        <CardFooter>
+                          <p className={`text-medium text-opacity-70`}>
+                              Outils: {realisation.outils.map((outil, index) => {
+                                return (
+                                  <span key={index} className={`text-primary-400`}>
+                                      {outil}{index < realisation.outils.length - 1 ? ', ' : ''}
+                                  </span>
+                                )
+                          })}
+                          </p>
+                        </CardFooter>
+                        </>
+                      }
+                    </Card>
+                  </div>
+                )
+              })}
+            </Masonry>
+          </div>
+        }
         {realisations == "PRO" &&
           <div className={`flex flex-col items-center md:items-start md:flex-row md:justify-around w-full`}>
-            <div className={`w-[75%] md:w-2/5`}>
+            <div className={`w-[80%] md:w-2/5`}>
             <div className={`mb-3 bg-white p-2 rounded-xl w-full`}>
               <p className={`p-3 rounded-xl bg-primary text-2xl font-semibold text-white`}>Première année</p>
                 {filteredRealisations.map((realisation, index) => {
                   {if (realisation.annee == 1) {
                     return (
-                      <div key={index}>
+                      <>
                         <Card onClick={() => router.push(`/realisations/${realisation.link}`)} isPressable={true}
-                              className="p-1 m-10 hover:scale-[102%] hover:cursor-pointer">
+                              className="p-1 m-5 md:m-8 lg:m-12 md:hover:scale-[102%] hover:cursor-pointer">
                           <CardHeader className="flex py-4 px-4 justify-start">
                             <p className="text-large uppercase font-bold text-primary">{realisation.title}</p>
                           </CardHeader>
@@ -157,21 +168,21 @@ const Realisation = () => {
                             </>
                           }
                         </Card>
-                      </div>
+                      </>
                     )
                   }}
                 })}
             </div>
             </div>
-            <div className={`w-[75%] md:w-2/5`}>
+            <div className={`w-[80%] md:w-2/5`}>
               <div className={`mb-3 bg-white p-2 rounded-xl w-full`}>
-                <p className={`p-3 rounded-xl bg-primary text-2xl  font-semibold text-white`}>Deuxième année</p>
-                {filteredRealisations.map((realisation, index) => {
+                <p className={`p-3 rounded-xl bg-primary text-2xl font-semibold text-white`}>Deuxième année</p>
+                {filteredRealisations.map((realisation) => {
                   {if (realisation.annee == 2) {
                     return (
-                      <div key={index}>
+                      <>
                         <Card onClick={() => router.push(`/realisations/${realisation.link}`)} isPressable={true}
-                              className="p-1 m-10 hover:scale-[102%] hover:cursor-pointer">
+                              className="p-1 m-5 md:m-8 lg:m-12 md:hover:scale-[102%] hover:cursor-pointer">
                           <CardHeader className="flex py-4 px-4 justify-start">
                             <p className="text-large uppercase font-bold text-primary">{realisation.title}</p>
                           </CardHeader>
@@ -198,7 +209,7 @@ const Realisation = () => {
                             </>
                           }
                         </Card>
-                      </div>
+                      </>
                     )
                   }}
                 })}
@@ -206,7 +217,13 @@ const Realisation = () => {
             </div>
           </div>
         }
+        <Button onClick={() => scroll(0, onButtonClick() - 50)} className={`group-hover:block hidden fixed bottom-16 right-5`}
+                style={{}}
+        >
+          Remonter
+        </Button>
       </Section>
+      </div>
     </>
   )
 }

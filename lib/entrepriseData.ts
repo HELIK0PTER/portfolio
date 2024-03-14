@@ -12,7 +12,7 @@ export const missionsData = [
     annee: "1ère et 2ème année",
   },
   {
-    title: "Gestion de projet",
+    title: "Fonctionnement en projet",
     content: `Participation à la gestion et a la realisations de projets informatiques.`,
     outils: ["Teams", "Task Planner", "Notion", "Excel", "Logiciels internes"],
     annee: "2ème année",

@@ -5,7 +5,8 @@ import {FaGithub, FaGitlab, FaLinkedin} from "react-icons/fa";
 export const Footer = () => {
   return (
     <footer
-    className={`
+			id={`footer`}
+    	className={`
       flex justify-between items-center
       h-20 w-full 
       p-8
