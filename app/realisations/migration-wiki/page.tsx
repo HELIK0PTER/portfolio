@@ -42,7 +42,7 @@ const Wiki = () => {
               Je me charge de la restructuration des données et elle de l'ajout des données.
             `}</p>
           </div>
-          <Image src={`/realisations/migration-wiki/mydbcfr.png`} alt="image" width={500} height={800} cl />
+          <Image src={`/realisations/migration-wiki/mydbcfr.png`} alt="image" width={500} height={800} />
         </div>
       </Section>
     </>
