@@ -20,6 +20,6 @@ export const H2 = ({children, color = 'success'}: props) => {
   }
 
   return (
-    <h2 className={`mb-12 text-3xl font-bold`} style={{color: couleur(color)}}>{children}</h2>
+    <h2 className={`mt-4 mb-6 text-3xl font-bold`} style={{color: couleur(color)}}>{children}</h2>
   )
 }

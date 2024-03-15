@@ -22,6 +22,7 @@ const Rugby = () => {
 -Capture du site de l'api (page que j'ai codé)
 -Capture du site de billetterie
 -Sauvergarde Github
+-trello
       */}
       
       <div className='flex flex-row gap-5 justify-center'>
@@ -33,6 +34,14 @@ const Rugby = () => {
           <H2 color='white'>Charte Graphique</H2>
           <Image src="/realisations/projetRugby/charte-graphique.png" alt={`image`} width={1000} height={500} className='w-[700px] h-auto'  />
         </div>
+      </div>
+
+      <br />
+      <Divider />
+
+      <div className="flex flex-col items-center">
+        <H2 color='white'>Trello</H2>
+        <Image src="/realisations/projetRugby/trello.png" alt={`image`} width={1000} height={500} className='w-[900px] h-auto'  />
       </div>
 
       <br />

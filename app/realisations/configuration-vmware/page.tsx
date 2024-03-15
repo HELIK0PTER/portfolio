@@ -1,42 +1,51 @@
 'use client'
 
-import {realisationsData} from "@/app/realisations/realisationsData";
+import Link from 'next/link';
+import Image from 'next/image'
+import { Divider } from '@nextui-org/react';
 
+import {realisationsData} from "@/app/realisations/realisationsData";
 import {DefaultRealisation} from "@/components/Sections/realisations/DefaultRealisation"
 
-import Image from 'next/image'
-
-import {Divider} from "@nextui-org/react";
 import {Section} from "@/components/Sections/Global/Section";
-import Link from "next/link";
+import {H2} from "@/components/Sections/Global/Title";
 
-const Aternos = () => {
-  const lib = realisationsData.find((realisation) => realisation.link === '/aternos')
+
+const VMware = () => {
+  const lib = realisationsData.find((realisation) => realisation.link === '/configuration-vmware')
   if (!lib) return <div>404</div>
   return (
-    <DefaultRealisation title={lib?.title} description={lib?.description}>
-      <div className={`flex justify-center`}>
-        <Link href="https://aternos.org/" target="_blank" className={`p-4 font-semibold rounded-2xl bg-primary`}>Lien vers le vrai site de Aternos</Link>
-      </div>
-      
-      <Section className={`pb-0 md:pb-14`} full={true}>
-        <div className={`flex flex-col md:flex-row gap-10 md:mx-20 p-10 bg-success md:rounded-xl`}>
-          <div>
-            <p className={`mb-6`}>Mon clone:</p>
-            <Image alt={`image`} src={`/realisations/aternos/Aternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
-          </div>
-          <Divider className={`md:hidden font-semibold bg-primary-800`}/>
-          <div>
-            <p className={`mb-6`}>Vrai site:</p>
-            <Image alt={`image`} src={`/realisations/aternos/RealAternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
-          </div>
+    <>
+    <DefaultRealisation title={lib?.title} description={lib?.description} />
+      <Section color="success" className={`pb-0 md:pb-14`} full={true}>
+        <H2 color='white'>Contrainte initiale :</H2>
+        <div className='grid grid-cols-3 gap-5 place-items-center w-[80%]'>
+          <p className='flex flex-col justify-center bg-white text-primary rounded-3xl p-5' >{`Les logiciels de maintenance des pc des techniciens sont externes et ne sont pas installés automatiquement via 
+          l'auto-installer interne.
+
+          `}</p>
+          <Image alt='image' src={`/realisations/configurationVmware/LogicielsMaintenance.png`}
+            width={1000} height={1000} className='w-[80%] col-span-2 rounded-xl'
+          />
+        </div>
+
+        <br />
+        <Divider />
+
+        <H2 color='white'>Solution: </H2>
+        <div className='grid grid-cols-3 gap-5 place-items-center w-[80%]'>
+          <Image alt='image' src={`/realisations/configurationVmware/ConfigurationVmware.png`}
+            width={1000} height={1000} className='w-[80%] col-span-2 rounded-xl'
+          />
+          <p className='flex flex-col justify-center bg-white text-primary rounded-3xl p-5' >{`
+            Configuration de VMware pour les logiciels de maintenance des pc des techniciens.
+            (quelques difficultés rencontrées par rapport à la licence windows, en cours de résolution encore)
+
+          `}</p>
         </div>
       </Section>
-    
-    </DefaultRealisation>
+    </>
   );
 }
 
-export default Aternos
+export default VMware;

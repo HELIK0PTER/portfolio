@@ -1,42 +1,52 @@
 'use client'
 
-import {realisationsData} from "@/app/realisations/realisationsData";
+import Link from 'next/link';
+import Image from 'next/image'
+import { Divider } from '@nextui-org/react';
 
+import {realisationsData} from "@/app/realisations/realisationsData";
 import {DefaultRealisation} from "@/components/Sections/realisations/DefaultRealisation"
 
-import Image from 'next/image'
-
-import {Divider} from "@nextui-org/react";
 import {Section} from "@/components/Sections/Global/Section";
-import Link from "next/link";
+import {H2} from "@/components/Sections/Global/Title";
 
-const Aternos = () => {
-  const lib = realisationsData.find((realisation) => realisation.link === '/aternos')
+
+const Wiki = () => {
+  const lib = realisationsData.find((realisation) => realisation.link === '/migration-wiki')
   if (!lib) return <div>404</div>
   return (
-    <DefaultRealisation title={lib?.title} description={lib?.description}>
-      <div className={`flex justify-center`}>
-        <Link href="https://aternos.org/" target="_blank" className={`p-4 font-semibold rounded-2xl bg-primary`}>Lien vers le vrai site de Aternos</Link>
-      </div>
-      
-      <Section className={`pb-0 md:pb-14`} full={true}>
-        <div className={`flex flex-col md:flex-row gap-10 md:mx-20 p-10 bg-success md:rounded-xl`}>
-          <div>
-            <p className={`mb-6`}>Mon clone:</p>
-            <Image alt={`image`} src={`/realisations/aternos/Aternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
+    <>
+    <DefaultRealisation title={lib?.title} description={lib?.description} />
+      <Section color="success" className={`pb-0 md:pb-14`} full={true}>
+        <H2 color='white'> Fonctionnement en Projet: </H2>
+        <div className='w-[80%]'>
+          {`Ce projet, tout récent me permet de découvrir le fonctionnement en projet. En effet, 
+          je suis en charge de la migration du wiki de l'entreprise, et de la restructuration des 
+          données pour qu'elles soient plus claires et plus faciles à trouver.`}
+        </div>
+        <br />
+        <div className='flex justify-around w-[80%]'>
+          <div className='flex flex-col w-[40%]'>
+            <H2 color='white'>Outils utilisés:</H2>
+            <ul className='text-left list-disc' >
+              <li>Outils Microsoft (teams, planner, etc...)</li>
+              <li>Site du nouveau wiki (partie prod)</li>
+            </ul>
+            <br />
+            <Divider />
+            <H2 color='white'>Organisation</H2>
+            <p>{`
+              Projet avec la responsable de la communication interne. Nous organisons des réunions avec les différents services,
+              pour connaître leurs besoins, et leur expliquer les changements. Nous travaillons aussi sur la création de processus,
+              cahiers des charges, etc...
+              Je me charge de la restructuration des données et elle de l'ajout des données.
+            `}</p>
           </div>
-          <Divider className={`md:hidden font-semibold bg-primary-800`}/>
-          <div>
-            <p className={`mb-6`}>Vrai site:</p>
-            <Image alt={`image`} src={`/realisations/aternos/RealAternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
-          </div>
+          <Image src={`/realisations/migration-wiki/mydbcfr.png`} alt="image" width={500} height={800} cl />
         </div>
       </Section>
-    
-    </DefaultRealisation>
+    </>
   );
 }
 
-export default Aternos
+export default Wiki;

@@ -54,19 +54,19 @@ export const realisationsData = [
     value: PRO,
     title: "Montage d'une baie de brassage",
     description: `Mission professionnelle qui consiste à monter une baie de brassage dans une des agences de l'entreprise.
-                  J'ai simplement été chargé de monter les équipements dans la baie. (branchement, fixation, etc...)`,
+                  `,
     link: '/baie-brassage',
-    img: imgPath + '/baieBrassage/BaieBrassage.png',
+    img: imgPath + '/baieBrassage/BaieBrassage.jpg',
     personnes: 2,
     annee: 1,
   },
   {
     value: PRO,
-    title: "Creation de scripts VBA pour générer des scripts SQL",
+    title: "Travail sous Oracle ApEx",
     description: `Projet professionnel qui consiste à mettre en place un serveur dans une des agences de l'entreprise.
                   J'ai simplement été chargé de monter les équipements dans la baie. (branchement, fixation, etc...)`,
     link: '/sql-vba',
-    img: imgPath + '/sql-vba/SqlVba.png',
+    img: imgPath + '/sql-vba/interface-apex.png',
     outils: ["VBA", "SQL", "Excel", "Oracle ApEx"],
     annee: 1,
   },
@@ -75,7 +75,7 @@ export const realisationsData = [
     title: "Gestion de la flotte informatique",
     description: `Mise a jour et maintenance de la base des équipements informatiques de l'entreprise.`,
     link: '/gestion-flotte-informatique',
-    img: imgPath + '/gestionFlotteInformatique/GestionFlotteInformatique.png',
+    img: imgPath + '/gestion-flotte-informatique/accueil-albatross.png',
     outils: ["Excel", "Oracle ApEx", "Logiciel interne sous Oracle"],
     annee: 1,
   },
@@ -85,32 +85,9 @@ export const realisationsData = [
     description: `Traitement des demandes des utilisateurs de l'entreprise. N'ayant pas d'ITSM, nous utilisions Outlook.
                   (création de compte, commande de logiciels/matériels, interventions sur les postes etc...)`,
     link: '/traitement-demandes-utilisateurs',
-    img: imgPath + '/traitementDemandesUtilisateurs/TraitementDemandesUtilisateurs.png',
+    img: imgPath + '/traitement-demandes-utilisateurs/classes-repartition.png',
     outils: ["Outlook", "Autres logiciels internes", "Notion"],
     annee: 1,
-  },
-  {
-    value: PRO,
-    title: "Renouvellement de la flotte des ordinateurs",
-    description: `Mission consistant à suivre le renouvellement de la flotte des ordinateurs de l'entreprise et
-                  accompagner les utilisateurs dans la prise en main de leur nouvel ordinateur.
-                  (mise en place de la migration des données, installation des logiciels, écriture de processus,etc...)`,
-    link: '/renouvellement-flotte-ordinateurs',
-    img: imgPath + '/renouvellementFlotteOrdinateurs/RenouvellementFlotteOrdinateurs.png',
-    outils: ["Outlook", "Excel", "Oracle ApEx", "Logiciel interne sous Oracle"],
-    annee: 2,
-  },
-  {
-    value: PRO,
-    title: "Travail sur le projet de mise en place d'un ITSM",
-    description: `Travail sur le projet de mise en place d'un ITSM.
-                  Test de plusieurs logiciels, proposition de processus, liste des besoins, etc...
-                  Fonctionnement temporaire sous Notion.`,
-    link: '/it-service-management',
-    img: imgPath + '/itServiceManagement/ItServiceManagement.png',
-    outils: ["Notion", "Outils Microsoft (teams, planner, etc...)","Autres logiciels internes"],
-    annee: 2,
-    personnes: 5,
   },
   {
     value: PRO,
@@ -119,7 +96,7 @@ export const realisationsData = [
                   sur la restructuration des données pour qu'elles soient plus claires et plus faciles à trouver.
                   (réunions avec les différents services, liste des besoins,création de processus, cahiers des charges, etc...)`,
     link: '/migration-wiki',
-    img: imgPath + '/migrationWiki/MigrationWiki.png',
+    img: imgPath + '/migration-wiki/mydbcfr.png',
     outils: ["Outils Microsoft (teams, planner, etc...)","Site du nouveau wiki"],
     annee: 2,
     personnes: 2,
@@ -127,9 +104,7 @@ export const realisationsData = [
   {
     value: PRO,
     title: "Configuration VMware pour les logiciels de maintenance",
-    description: `Configuration de VMware pour les logiciels de maintenance des pc des techniciens car
-                  les logiciels sont externes et ne sont pas installés automatiquement via l'auto-installer interne.
-                  (gain de temps énorme pour les techniciens)`,
+    description: `Configuration de VMware pour les logiciels de maintenance des pc des techniciens.`,
     link: '/configuration-vmware',
     img: imgPath + '/configurationVmware/ConfigurationVmware.png',
     outils: ["VMware", "Outils Microsoft (teams, planner, etc...)"],
