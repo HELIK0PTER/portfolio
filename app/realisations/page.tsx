@@ -46,7 +46,7 @@ const Realisation = () => {
         </h2>
       </Hero>
       <div>
-      <Section id={"realisations"} full className={`group relative bg-success min-h-[400px]`}>
+      <Section id={"realisations"} color='success' full className={`group relative min-h-[400px]`}>
         
         <div className={`lg:absolute right-40
           bg-primary-100 p-3 rounded-md text-primary`}

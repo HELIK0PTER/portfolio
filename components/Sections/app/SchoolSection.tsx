@@ -12,7 +12,7 @@ import {LuGraduationCap} from "react-icons/lu";
 
 export const SchoolSection = () => {
   return (
-    <Section className={`bg-success`}>
+    <Section color={`success`}>
       <h1 className={`
         text-primary-50 text-3xl font-bold
         pb-5

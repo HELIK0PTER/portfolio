@@ -17,59 +17,34 @@ export const realisationsData = [
   },
   {
     value: SCOLAIRE,
-    title: "ChessGame",
-    description: `Projet scolaire qui consiste à créer un jeu d'échec sur navigateur.
-                  Il est possible de disputer une partie contre l'ordinateur ou contre un autre joueur et
-                  les scores sont enregistrés.`,
-    link: '/chess-game',
-    img: imgPath + '/chessGame/ChessGame.png',
-    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript', "Git"],
-  },
-  {
-    value: SCOLAIRE,
-    title: "Motorized Wide Area",
-    description: `Projet scolaire qui consiste à créer une application pour une entreprise de location de voitures.
-                  L'application permet de gérer les locations, les clients, les voitures, etc...`,
-    link: '/motorized-wide-area',
-    img: imgPath + '/motorizedWideArea/MotorizedWideArea.png',
-    outils: ["Java", "JavaFX", "MySQL", "Figma", "Git", "Jira"],
-    personnes: 3,
-  },
-  {
-    value: SCOLAIRE,
     title: "Projet Rugby",
     description: `Projet de creation d'une API ORM avec Django pour le site d'une compétition de rugby.
-                  L'API avait son propre site web, et le site de la compétition servait de billéterie.`,
+                  L'API avait son propre site web, et le site de la compétition servait de billetterie.
+                  On devait aussi coder la billetterie avec comme contrainte d'affichage le fait que ce
+                  soit une page "mobile first" c'est a dire un affichage mobile.
+                  `,
     link: '/projet-rugby',
     img: imgPath + '/projetRugby/ProjetRugby.png',
     outils: ["Django", "Python", "SQL", "Figma", "Git", "Jira", "Nextjs", "Tailwindcss", "Typescript"],
   },
   {
     value: SCOLAIRE,
-    title: "Portfolio (ce même site)",
-    description: `Projet personnel qui consiste à créer mon portfolio. Il contient notamment mes realisations,
-                  mes compétences en informatique, mon parcours, une page de veille technologique, etc...
-                  J'en ait beaucoup appris sur Nextjs et Tailwindcss et sur la gestion de version sur Git.`,
-    link: '/portfolio',
-    img: imgPath + '/portfolio/Portfolio.png',
-    outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript',"Git", "Vercel"],
-  },
-  {
-    value: PERSO,
-    title: 'Clone de Aternos',
-    description: `C'est le premier projet que j'ai commencé moi même en NextJS. Il m'a servi à approfondir mes
-                  compétences dans ce langage de programmation. Il s'agit d'une copie de la page
-                  d'accueil du site Aternos.`,
-    link: '/aternos',
-    img: imgPath + '/aternos/Aternos.png',
-    outils: ['Nextjs', 'React','Tailwindcss', 'Typescript'],
+    title: "Motorized Wide Area",
+    description: `Projet scolaire qui consiste à créer une application pour une entreprise de location de voitures.
+                  L'application permet de gérer les locations, les clients, les voitures, etc...
+                  Le projet est encore en cours de développement application n'est encore disponible mais nous avons déjà
+                  créé la base de donnée de test.`,
+    link: '/motorized-wide-area',
+    img: imgPath + '/motorizedWideArea/MotorizedWideArea.png',
+    outils: ["Java", "JavaFX", "MySQL", "Figma", "Git", "Jira"],
+    personnes: 3,
   },
   {
     value: PERSO,
     title: "Tati Lissages",
     description: `J'ai créé ce site web pour ma mère. Il s'agit d'un site vitrine
-                  qui présente ses services, ses tarifs, ses horaires, etc... car ma mère est coiffeuse
-                  à son compte. (j'ai pour projet d'améliorer ce site en y ajoutant un système de prise de rendez-vous
+                  qui présente ses services, ses tarifs, etc... car ma mère est coiffeuse
+                  à son compte. A noter que le site est toujours en développement. (j'ai pour projet d'améliorer ce site en y ajoutant un système de prise de rendez-vous
                   et un système de paiement en ligne)`,
     link: '/tati-lissages',
     img: imgPath + '/tatiLissages/TatiLissages.png',
@@ -87,7 +62,7 @@ export const realisationsData = [
   },
   {
     value: PRO,
-    title: "Generation de scripts VBA pour générer des scripts SQL",
+    title: "Creation de scripts VBA pour générer des scripts SQL",
     description: `Projet professionnel qui consiste à mettre en place un serveur dans une des agences de l'entreprise.
                   J'ai simplement été chargé de monter les équipements dans la baie. (branchement, fixation, etc...)`,
     link: '/sql-vba',
@@ -113,16 +88,6 @@ export const realisationsData = [
     img: imgPath + '/traitementDemandesUtilisateurs/TraitementDemandesUtilisateurs.png',
     outils: ["Outlook", "Autres logiciels internes", "Notion"],
     annee: 1,
-  },
-  {
-    value: PRO,
-    title: "Operation de recyclage des équipements informatiques",
-    description: `Mise en place d'une operation de recyclage des équipements informatiques de l'entreprise qui
-                  encombraient les locaux.`,
-    link: '/recyclage-equipements-informatiques',
-    img: imgPath + '/recyclageEquipementsInformatiques/RecyclageEquipementsInformatiques.png',
-    annne: 1,
-    personnes: 2,
   },
   {
     value: PRO,
@@ -158,16 +123,6 @@ export const realisationsData = [
     outils: ["Outils Microsoft (teams, planner, etc...)","Site du nouveau wiki"],
     annee: 2,
     personnes: 2,
-  },
-  {
-    value: PRO,
-    title: "Attributions de drois applicatifs (application interne)",
-    description: `Attribution de drois applicatifs pour les utilisateurs de l'entreprise. Creation aussi de processus
-                  pour une attibution de droits plus fluide.
-                  (sans demander quels droits l'utilisateur a besoin à chaque fois)`,
-    link: '/attribution-droits-applicatifs',
-    img: imgPath + '/attributionDroitsApplicatifs/AttributionDroitsApplicatifs.png',
-    annee: 2,
   },
   {
     value: PRO,

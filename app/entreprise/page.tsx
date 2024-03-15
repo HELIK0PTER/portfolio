@@ -12,10 +12,10 @@ const Entreprise = () => {
     <>
       <Hero className={``}>
         <Section className={`relative flex flex-col max-h-[100vh]`}>
-            <Image alt={`logo DB`} src={``} width={900} height={900} />
+            <Image alt={`logo DB`} src={`/entreprise/DB-Cargo-website.png`} width={1200} height={1200} />
         </Section>
       </Hero>
-      <Section className={`bg-success`}>
+      <Section color={`success`}>
         <div className={`flex flex-col gap-5`}>
           <h2 className={`mb-12 text-primary-200 text-3xl font-bold`}>Présentation</h2>
           <p className={`text-lg`}>
@@ -34,7 +34,7 @@ const Entreprise = () => {
           <Image alt={`organigrame`} src={`/entreprise/Organigrame.png`} width={600} height={600} />
         </div>
       </Section>
-      <Section className={`bg-success`}>
+      <Section color={`success`}>
         <h1 className={`mb-12 text-primary-50 text-3xl font-bold`}>Mon quotidien</h1>
         
         <div className=' w-full'>

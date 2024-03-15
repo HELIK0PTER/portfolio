@@ -1,11 +1,10 @@
 import {Section} from "@/components/Sections/Global/Section";
 
 import {skillsData} from "@/lib/homeData";
-import {any} from "prop-types";
 
 export const Langages = () => {
   return (
-    <Section className={`bg-success`}>
+    <Section color={`success`}>
       <div className={`flex flex-row flex-wrap justify-center gap-5 w-[70%]`}>
         {skillsData.map((skill, index) => {
           return (

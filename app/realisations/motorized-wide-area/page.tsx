@@ -1,42 +1,70 @@
 'use client'
 
-import {realisationsData} from "@/app/realisations/realisationsData";
+import Image from 'next/image'
+import { Divider } from '@nextui-org/react';
 
+import {realisationsData} from "@/app/realisations/realisationsData";
 import {DefaultRealisation} from "@/components/Sections/realisations/DefaultRealisation"
 
-import Image from 'next/image'
-
-import {Divider} from "@nextui-org/react";
 import {Section} from "@/components/Sections/Global/Section";
-import Link from "next/link";
+import {H2} from "@/components/Sections/Global/Title";
 
-const Aternos = () => {
-  const lib = realisationsData.find((realisation) => realisation.link === '/aternos')
+
+const MWA = () => {
+  const lib = realisationsData.find((realisation) => realisation.link === '/motorized-wide-area')
   if (!lib) return <div>404</div>
   return (
-    <DefaultRealisation title={lib?.title} description={lib?.description}>
-      <div className={`flex justify-center`}>
-        <Link href="https://aternos.org/" target="_blank" className={`p-4 font-semibold rounded-2xl bg-primary`}>Lien vers le vrai site de Aternos</Link>
+    <>
+    <DefaultRealisation title={lib?.title} description={lib?.description} />
+    <Section color="success" className={`pb-0 md:pb-14`} full={true}>
+      {/* 
+        -Cahier des Charges (UML, Use Case, Gantt)
+        -Cahier Technique (UML, Modele Relationnel, Gantt)
+        -Ticketing et Gantt sur Jira
+        -Maquettes
+        -Capture de la Base de Données
+        */}
+      <H2 color='white'>Cahier des Charges</H2>
+      <div className='h-[800px] overflow-y-auto'>
+        <Image src="/realisations/motorizedWideArea/cahier-des-charges.png" alt="Cahier des Charges" width={1920} height={1080} className='w-[800px]'/>
       </div>
-      
-      <Section className={`pb-0 md:pb-14`} full={true}>
-        <div className={`flex flex-col md:flex-row gap-10 md:mx-20 p-10 bg-success md:rounded-xl`}>
-          <div>
-            <p className={`mb-6`}>Mon clone:</p>
-            <Image alt={`image`} src={`/realisations/aternos/Aternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
-          </div>
-          <Divider className={`md:hidden font-semibold bg-primary-800`}/>
-          <div>
-            <p className={`mb-6`}>Vrai site:</p>
-            <Image alt={`image`} src={`/realisations/aternos/RealAternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
-          </div>
+
+      <br />
+      <Divider />
+
+      <H2 color='white'>Cahier Technique</H2>
+      <div className='h-[800px] overflow-y-auto'>
+        <Image src="/realisations/motorizedWideArea/cahier-technique.png" alt="Cahier Technique" width={1920} height={1080} className='w-[800px]'/>
+      </div>
+
+      <br />
+      <Divider />
+
+      <H2 color='white'>Ticketing et Gantt sur Jira</H2>
+      <div className='h-[800px] overflow-y-auto'>
+        <Image src="/realisations/motorizedWideArea/ticketing-jira.png" alt="Ticketing et Gantt sur Jira" width={1920} height={1080} className='w-[800px]'/>
+      </div>
+
+      <br />
+      <Divider />
+
+      <H2 color='white'>Maquettes</H2>
+      <div className='p-3 bg-gray-400 bg-opacity-50 rounded-md'>
+        <div className='h-[800px] overflow-y-auto'>
+          <Image src="/realisations/motorizedWideArea/Maquettes/m3.png" alt="Maquettes" width={1920} height={1080} className='w-[800px] mb-5'/>
+          <Image src="/realisations/motorizedWideArea/Maquettes/m1.png" alt="Maquettes" width={1920} height={1080} className='w-[800px] mb-5'/>
+          <Image src="/realisations/motorizedWideArea/Maquettes/m2.png" alt="Maquettes" width={1920} height={1080} className='w-[800px]'/>
         </div>
-      </Section>
-    
-    </DefaultRealisation>
+      </div>
+
+      <br />
+      <Divider />
+
+      <H2 color='white'>Capture de la Base de Données</H2>
+      <Image src="/realisations/motorizedWideArea/bdd.png" alt="Capture de la Base de Données" width={1920} height={1080} className='w-[1000px]'/>
+    </Section>
+    </>
   );
 }
 
-export default Aternos
+export default MWA;

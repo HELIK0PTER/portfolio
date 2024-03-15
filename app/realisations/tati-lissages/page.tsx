@@ -1,42 +1,54 @@
 'use client'
 
-import {realisationsData} from "@/app/realisations/realisationsData";
+import Image from 'next/image'
+import { Divider } from '@nextui-org/react';
 
+import {realisationsData} from "@/app/realisations/realisationsData";
 import {DefaultRealisation} from "@/components/Sections/realisations/DefaultRealisation"
 
-import Image from 'next/image'
-
-import {Divider} from "@nextui-org/react";
 import {Section} from "@/components/Sections/Global/Section";
-import Link from "next/link";
+import {H2} from "@/components/Sections/Global/Title";
 
-const Aternos = () => {
-  const lib = realisationsData.find((realisation) => realisation.link === '/aternos')
+
+const Tati = () => {
+  const lib = realisationsData.find((realisation) => realisation.link === '/tati-lissages')
   if (!lib) return <div>404</div>
   return (
-    <DefaultRealisation title={lib?.title} description={lib?.description}>
-      <div className={`flex justify-center`}>
-        <Link href="https://aternos.org/" target="_blank" className={`p-4 font-semibold rounded-2xl bg-primary`}>Lien vers le vrai site de Aternos</Link>
-      </div>
-      
-      <Section className={`pb-0 md:pb-14`} full={true}>
-        <div className={`flex flex-col md:flex-row gap-10 md:mx-20 p-10 bg-success md:rounded-xl`}>
-          <div>
-            <p className={`mb-6`}>Mon clone:</p>
-            <Image alt={`image`} src={`/realisations/aternos/Aternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
-          </div>
-          <Divider className={`md:hidden font-semibold bg-primary-800`}/>
-          <div>
-            <p className={`mb-6`}>Vrai site:</p>
-            <Image alt={`image`} src={`/realisations/aternos/RealAternos.png`} width={800} height={800}
-                   className={`rounded-2xl`}/>
-          </div>
+    <>
+    <DefaultRealisation title={lib?.title} description={lib?.description} />
+      <Section color="success" className={`pb-0 md:pb-14`} full={true}>
+        {/*
+        -Maquette
+        -Stockage du code sur Github
+        -Déploiement sur Vercel
+        -Capture d'écran du site
+          */}
+        <H2 color='white'>Maquette</H2>
+        <Image src="/realisations/tatiLissages/maquette.png" alt="Tati Lissages" width={1920} height={1080} className='w-[50%] h-auto' />
+
+        <br />
+        <Divider />
+
+        <H2 color='white'>Stockage du code sur Github</H2>
+        <Image src="/realisations/tatiLissages/github.png" alt="Tati Lissages" width={1920} height={1080} className='w-[50%] h-auto' />
+
+        <br />
+        <Divider />
+
+        <H2 color='white'>Déploiement sur Vercel</H2>
+        <Image src="/realisations/tatiLissages/vercel.png" alt="Tati Lissages" width={1920} height={1080} className='w-[50%] h-auto' />
+
+        <br />
+        <Divider />
+
+        <H2 color='white'>Capture d'écran du site final</H2>
+        <div className='h-[80vh] overflow-auto'>
+          <Image src="/realisations/tatiLissages/site.png" alt="Tati Lissages" width={1920} height={1080} className='h-auto w-auto' />
         </div>
+        
       </Section>
-    
-    </DefaultRealisation>
+    </>
   );
 }
 
-export default Aternos
+export default Tati;

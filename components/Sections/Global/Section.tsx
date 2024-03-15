@@ -5,11 +5,27 @@ interface props {
   children?: React.ReactNode;
   id?: string;
   className?: string;
+  color?: 'success' | 'white';
   full?: boolean;
 }
 
 export const
-  Section = ({children, id, className, full=false}:props) => {
+  Section = ({children, id, className, color = 'white',full=false}:props) => {
+
+    const couleur = (color:string) => {
+      // couleurs en css et non tailwind car tailwind ne permet pas de faire des classes dynamiques
+      switch (color) {
+        case 'success':
+          return 'var(--color-success)'
+        case 'primary':
+          return 'var(--color-primary)'
+        case 'white':
+          return 'white'
+        default:
+          return 'white'
+      }
+    }
+
   return (
     <div
     id={id}
@@ -17,7 +33,9 @@ export const
     flex flex-col justify-start items-center gap-4 w-full 
     text-lg font-normal text-center   
     pt-16 pb-14
-    `, className)}>
+    `, className)}
+    style={{backgroundColor: couleur(color)}}
+    >
       <div className={`
       flex flex-col justify-start items-center gap-4
       text-lg font-normal text-center 

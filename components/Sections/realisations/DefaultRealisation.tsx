@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {Button} from "@nextui-org/react";
 import {FaArrowLeft} from "react-icons/fa";
 import {Section} from "@/components/Sections/Global/Section";
+import { Button } from "@nextui-org/react"
 
-type propsType = {
+type propsType = {  
 	children?: React.ReactNode,
 	title: string,
 	description: string,
@@ -18,9 +18,9 @@ export const DefaultRealisation = (
 	}:propsType
 ) => {
 	return (
-		<div>
+		<>
 			<Section full={true} className={`relative`}>
-				<div className={`absolute top-10 left-10`}>
+				<div className={`fixed top-20 left-20`}>
 					<Button isIconOnly color="danger" aria-label="Back"
 									onPress={() => window.history.back()}
 					>
@@ -34,6 +34,6 @@ export const DefaultRealisation = (
 				</Section>
 			</Section>
 			{children}
-		</div>
+		</>
 	)
 }
