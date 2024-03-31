@@ -25,6 +25,7 @@ export default function Home() {
           duration-[.5s]
           
           `} />
+          <Image alt={`display image`} src={`/moi.png`} width={100} height={100} className={`hidden`}/>
           <h1 className={`text-success text-4xl font-semibold`}>
             Matheus Kops Guedes
           </h1>
