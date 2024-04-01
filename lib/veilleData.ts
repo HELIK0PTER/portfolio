@@ -6,7 +6,7 @@ export const veilleData = [
     img: '1.jpg',
     link: 'https://www.capital.fr/crypto/letf-bitcoin-approuve-par-le-commissaire-de-la-bourse-americaine-1490205',
     note: 5,
-    date: '11/01/2024'
+    date: "11/01/2024"
   },
   {
     title: 'Prévisions sur les cryptos dans le futur proche',
@@ -15,6 +15,6 @@ export const veilleData = [
     img: '2.png',
     link: 'https://www.youtube.com/watch?v=IBJW3x4M-aE&t=778s',
     note: 3,
-    date: '13/01/2024'
+    date: "13/01/2024"
   },
 ]

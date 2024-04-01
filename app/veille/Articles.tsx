@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import { Article } from '@/app/veille/Article';
 import { veilleData } from '@/lib/veilleData';
-import {Select, SelectSection, SelectItem} from "@nextui-org/react";
+import {Select, SelectItem} from "@nextui-org/react";
 
 const tris = [
   {
@@ -31,6 +31,23 @@ export const Articles: React.FC = () => {
       setArticles([...articles].sort((a, b) => a.note - b.note));
     } else if (ordering === 'note: decroissant') {
       setArticles([...articles].sort((a, b) => b.note - a.note));
+    }
+    else if (ordering === 'recents') {
+      setArticles([...articles].slice().sort((b, a) =>
+        new Date(Number(a.date.split("/")[2]),Number(a.date.split("/")[1]),Number(a.date.split("/")[0])).getDate()
+        -
+        new Date(Number(b.date.split("/")[2]),Number(b.date.split("/")[1]),Number(b.date.split("/")[0])).getDate()
+      ))
+    }
+    else if (ordering === 'anciens') {
+      setArticles([...articles].slice().sort((a, b) =>
+        new Date(Number(a.date.split("/")[2]),Number(a.date.split("/")[1]),Number(a.date.split("/")[0])).getDate()
+        -
+        new Date(Number(b.date.split("/")[2]),Number(b.date.split("/")[1]),Number(b.date.split("/")[0])).getDate()
+      ))
+    }
+    else {
+      setArticles(veilleData);
     }
   }, [articles, ordering]);
   
@@ -65,6 +82,7 @@ export const Articles: React.FC = () => {
             note={article.note}
             image={article.img}
             link={article.link}
+            date={article.date}
           />
         ))}
       </div>

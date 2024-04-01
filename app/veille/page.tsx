@@ -17,7 +17,7 @@ export default function Veille() {
           </p>
         </Section>
       </Hero>
-      <Section className="bg-success">
+      <Section color={"success"}>
         <Articles />
       </Section>
     </>

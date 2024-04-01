@@ -1,6 +1,15 @@
 'useclient'
 
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+  CardFooter
+} from "@nextui-org/react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
 interface ArticleProps {
@@ -9,6 +18,7 @@ interface ArticleProps {
   description: string;
   image: string | "public/images/react.png";
   link: string;
+  date?: string;
 }
 
 export const Article: React.FC<ArticleProps> = ({
@@ -17,6 +27,7 @@ export const Article: React.FC<ArticleProps> = ({
   description,
   image,
   link,
+  date,
 }) => {
   
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -37,14 +48,17 @@ export const Article: React.FC<ArticleProps> = ({
           {/* pour modifier le style des étoiles voir la fonction au dessus */}
           <small> {stars(note)} </small>
         </CardHeader>
-        <CardBody className="overflow-visible py-2">
+        <CardBody className="overflow-visible py-2 w-full flex flex-col items-center">
           <Image
             alt="Card background"
             className="object-cover rounded-xl"
-            src= {`/veille/` + image}
+            src={`/veille/` + image}
             width={270}
           />
         </CardBody>
+        <CardFooter className={`w-full pb-0 flex justify-end`}>
+          <small style={{color : "grey"}}> {date} </small>
+        </CardFooter>
       </Card>
       
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
