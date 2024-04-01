@@ -18,20 +18,7 @@ export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'Portfolio de Matheus Kops Guedes',
   openGraph: {
-    title: 'Portfolio de Matheus Kops Guedes',
-    description: 'Découvrez mon portfolio réalisé avec Next.js, Tailwind CSS et les librairies shadcn et next.ui',
-    url: 'https://matheuskopsguedes.com',
-    siteName: 'Portfolio de Matheus Kops Guedes',
-    images: [
-      {
-        url: 'https://matheuskopsguedes.com/moi.png',
-        width: 1200,
-        height: 630,
-        alt: 'Matheus Kops Guedes',
-      },
-    ],
-    locale: 'fr-FR',
-    type: 'website',
+    images: ['/moi.png'],
   },
 }
 
