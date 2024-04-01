@@ -18,8 +18,11 @@ export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'Portfolio de Matheus Kops Guedes',
   openGraph: {
-    images: ['/moi.png'],
+  
   },
+  twitter: {
+  
+  }
 }
 
 export default function RootLayout({
