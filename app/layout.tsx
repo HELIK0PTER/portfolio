@@ -15,6 +15,8 @@ import {Header} from "@/components/layouts/Header";
 import {Footer} from "@/components/layouts/Footer";
 
 export const metadata: Metadata = {
+  title: 'Portfolio',
+  description: 'Portfolio de Matheus Kops Guedes',
   openGraph: {
     title: 'Portfolio',
     description: 'Portfolio de Matheus Kops Guedes',
@@ -24,13 +26,24 @@ export const metadata: Metadata = {
       {
         url: 'https://www.matheuskopsguedes.com/opengraph-image.png',
         width: 800,
-        height: 600,
+        height: 800,
         alt: 'Og Image Alt',
       },
     ],
     locale: 'fr_FR',
     type: 'website',
   },
+  twitter: {
+    title: 'Portfolio',
+    description: 'Portfolio de Matheus Kops Guedes',
+    images: {
+      url: 'https://www.matheuskopsguedes.com/opengraph-image.png',
+      width: 800,
+      height: 800,
+      alt: 'Twitter Image Alt',
+    },
+    card : 'summary_large_image',
+  }
 }
 
 export default function RootLayout({

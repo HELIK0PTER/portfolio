@@ -14,10 +14,9 @@ export const Footer = () => {
       font-semibold`}>
 		  <p className={``}>© 2023 Matheus</p>
 		  <div className={`gap-5 hidden md:flex`}>
-		    <Link href={`https://github.com/HELIK0PTER/MATHEUS_KOPSGUEDES`} className={`flex items-center justify-center gap-1`}> <FaGithub /> GitHub</Link>
-        {/*modifier le repo gitlab et remettre le bon lien*/}
-        <Link href={`https://gitlab.com`} className={`flex items-center justify-center gap-1`}> <FaGitlab /> GitLab</Link>
-        <Link href={`https://www.linkedin.com/in/matheus-kops-guedes-4293b7213/`} className={`flex items-center justify-center gap-1`}> <FaLinkedin /> Linkedin</Link>
+		    <Link href={`https://github.com/HELIK0PTER/HELIK0PTER`} target={'_blank'} className={`flex items-center justify-center gap-1`}> <FaGithub /> GitHub</Link>
+        <Link href={`https://gitlab.com/HELIK0PTER`} target={'_blank'} className={`flex items-center justify-center gap-1`}> <FaGitlab /> GitLab</Link>
+        <Link href={`https://www.linkedin.com/in/matheus-kops-guedes-4293b7213/`} target={'_blank'} className={`flex items-center justify-center gap-1`}> <FaLinkedin /> Linkedin</Link>
       </div>
       {/* faire une page mentions légales*/}
       <Link href={`/`}>Mentions Légales</Link>
