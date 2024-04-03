@@ -3,23 +3,9 @@
 import { Articles } from "@/app/veille/Articles";
 import { Section } from "@/components/Sections/Global/Section";
 import { Hero } from "@/components/Sections/Global/Hero";
-import { GiClick } from "react-icons/gi";
-
-import {H2} from '@/components/Sections/Global/Title';
-
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  useDisclosure,
-} from "@nextui-org/react";
-
-import {termesTechniques} from '@/lib/veilleData';
+import Termes from "@/app/veille/Termes";
 
 export default function Veille() {
-  
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
   
   return (
     <>
@@ -41,35 +27,7 @@ export default function Veille() {
       
       
       <Section>
-        <div className={`flex justify-center items-center gap-5`}><H2> Termes techniques </H2> <GiClick className={`size-8`} /></div>
-        
-        <div className={`flex flex-row flex-wrap justify-center gap-5 w-[70%]`}>
-          {termesTechniques.map((terme, index) => (
-            <>
-            <div key={index}
-                 className={`py-1 px-2 bg-primary-200 font-semibold text-success rounded-lg md:hover:scale-110 transition hover:cursor-default`}
-                 onClick={onOpen}
-            >
-              <h3 className="text-lg font-semibold">{terme.terme}</h3>
-            </div>
-            
-            <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-              <ModalContent>
-                {(onClose) => (
-                  <>
-                    <ModalHeader className="flex flex-col gap-1">{terme.terme}</ModalHeader>
-                    <ModalBody className={`flex items-center text-center`}>
-                      <p>
-                        {terme.definition}
-                      </p>
-                    </ModalBody>
-                  </>
-                )}
-              </ModalContent>
-            </Modal>
-            </>
-          ))}
-        </div>
+        <Termes />
       </Section>
       
       
