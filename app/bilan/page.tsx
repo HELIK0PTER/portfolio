@@ -12,6 +12,7 @@ type section = {
 	children: React.ReactNode
 	center?: boolean
 	align?: string
+	className?: string
 }
 const H1 = ({children, center}: section) => {
 	return (
@@ -23,9 +24,10 @@ const H1 = ({children, center}: section) => {
 	)
 }
 
-const SEC = ({children, align}: section) => {
+const SEC = ({children, className}: section) => {
 	return (
-		<div className={`w-[70%] md:w-[55%] flex flex-col items-center md:items-` + align + ` `}>
+		<div className={`w-full flex flex-col items-center ${className}`}
+		>
 			{children}
 		</div>
 	)
@@ -69,33 +71,35 @@ const Bilan: React.FC = () => {
 					Compétences acquises:
 				</H2>
 				{/*langages appris*/}
-				<SEC align={`start`}>
-					<H1>
-						Langages appris:
-					</H1>
-					<div className={`mt-10 grid gap-2 w-[80%] md:w-3/5`}>
-						<Progress label="NextJS" value={75} className="max-w-md"/>
-						<Progress label="HTML/CSS" value={80} className="max-w-md"/>
-						<Progress label="PHP" value={45} className="max-w-md"/>
-						<Progress label="Python" value={35} className="max-w-md"/>
-						<Progress label="React" value={40} className="max-w-md"/>
-						<Progress label="Java" value={55} className="max-w-md"/>
-						<Progress label="Python-Django" value={40} className="max-w-md"/>
-					</div>
-				</SEC>
-				<SEC align={`end`}>
-					<H1>
-						Soft Skills acquis:
-					</H1>
-					<div className={`mt-10 grid gap-2 w-[80%] md:w-3/5`}>
-						<Progress label="Travail en équipe" value={80} className="max-w-md"/>
-						<Progress label="Autonomie" value={85} className="max-w-md"/>
-						<Progress label="Gestion de projet" value={70} className="max-w-md"/>
-						<Progress label="Communication" value={75} className="max-w-md"/>
-						<Progress label="Adaptabilité" value={70} className="max-w-md"/>
-						<Progress label="Résolution de problème" value={80} className="max-w-md"/>
-					</div>
-				</SEC>
+				<div className={`w-[80%] md:w-3/5 `}>
+					<SEC className={`md:items-start`}>
+						<H1 center={true}>
+							Langages appris:
+						</H1>
+						<div className={`mt-10 grid gap-2 max-w-md w-full place-items-center`}>
+							<Progress label="NextJS" value={75} className="max-w-md"/>
+							<Progress label="HTML/CSS" value={80} className="max-w-md"/>
+							<Progress label="PHP" value={45} className="max-w-md"/>
+							<Progress label="Python" value={35} className="max-w-md"/>
+							<Progress label="React" value={40} className="max-w-md"/>
+							<Progress label="Java" value={55} className="max-w-md"/>
+							<Progress label="Python-Django" value={40} className="max-w-md"/>
+						</div>
+					</SEC>
+					<SEC className={`md:items-end`}>
+						<H1 center={true}>
+							Soft Skills acquis:
+						</H1>
+						<div className={`mt-10 grid gap-2 max-w-md w-full place-items-center`}>
+							<Progress label="Travail en équipe" value={80} className="max-w-md"/>
+							<Progress label="Autonomie" value={85} className="max-w-md"/>
+							<Progress label="Gestion de projet" value={70} className="max-w-md"/>
+							<Progress label="Communication" value={75} className="max-w-md"/>
+							<Progress label="Adaptabilité" value={70} className="max-w-md"/>
+							<Progress label="Résolution de problème" value={80} className="max-w-md"/>
+						</div>
+					</SEC>
+				</div>
 			</Section>
 		</>
 	)
