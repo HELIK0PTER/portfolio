@@ -74,7 +74,7 @@ export const Articles: React.FC = () => {
         </Select>
       </div>
       
-      <Masonry columns={{xs: 1, sm:2, md:3, lg:4}} spacing={2}>
+      <div className={`grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4`}>
         {articles.map((article) => (
           <Article
             key={article.title}
@@ -86,7 +86,7 @@ export const Articles: React.FC = () => {
             date={article.date}
           />
         ))}
-      </Masonry>
+      </div>
     </>
   );
 };

@@ -48,13 +48,13 @@ export const Article: React.FC<ArticleProps> = ({
           {/* pour modifier le style des étoiles voir la fonction au dessus */}
           <small> {stars(note)} </small>
         </CardHeader>
-        <CardBody className="overflow-visible py-2 w-full flex flex-col items-center">
-          <Image
+        <CardBody className=" overflow-hidden py-2 w-full max-h-40 flex flex-col items-center">
+          <div className={"rounded-xl"}><Image
             alt="Card background"
-            className="object-cover rounded-xl"
+            className="rounded-xl object-contain max-h-80"
             src={`/veille/` + image}
             width={270}
-          />
+          /></div>
         </CardBody>
         <CardFooter className={`w-full pb-0 flex justify-end`}>
           <small style={{color : "grey"}}> {date} </small>
