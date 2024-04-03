@@ -35,7 +35,7 @@ const BaieBrassage = () => {
             <br />
             <H2 color="white"> Fonctionnalité </H2>
             <div>
-              {`Cette baie fonctionne sous routeur 4G et est équipée de 2 switchs. Le but est de simplement
+              {`Cette baie fonctionne sous routeur 4G et est équipée de switchs et de DB Box (nos proxys internes). Le but est de simplement
               déservir du réseau à une dizaine de postes de travail.`}
             </div>
           </div>
