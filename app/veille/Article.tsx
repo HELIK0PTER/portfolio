@@ -17,7 +17,7 @@ interface ArticleProps {
   note: number;
   description: string;
   image: string | "public/images/react.png";
-  link: string;
+  link?: string;
   date?: string;
 }
 
@@ -81,11 +81,15 @@ export const Article: React.FC<ArticleProps> = ({
                 <div className={`pt-2`}>
                   note: {stars(note)}
                 </div>
-                <div>
-                  <Button color="primary" onPress={() => window.open(link)}>
-                    Lien
-                  </Button>
-                </div>
+                {
+                  link && (
+                    <div>
+                      <Button color="primary" onPress={() => window.open(link)}>
+                        Lien
+                      </Button>
+                    </div>
+                  )
+                }
               </ModalFooter>
             </>
           )}

@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import { Article } from '@/app/veille/Article';
 import { veilleData } from '@/lib/veilleData';
 import {Select, SelectItem} from "@nextui-org/react";
+import { Masonry } from "@mui/lab"
 
 const tris = [
   {
@@ -72,8 +73,8 @@ export const Articles: React.FC = () => {
           ))}
         </Select>
       </div>
-
-      <div className="w-full grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      
+      <Masonry columns={{xs: 1, sm:2, md:3, lg:4}} spacing={2}>
         {articles.map((article) => (
           <Article
             key={article.title}
@@ -81,11 +82,11 @@ export const Articles: React.FC = () => {
             description={article.description}
             note={article.note}
             image={article.img}
-            link={article.link}
+            link={article.link ?? undefined}
             date={article.date}
           />
         ))}
-      </div>
+      </Masonry>
     </>
   );
 };
