@@ -67,6 +67,18 @@ export const veilleData = [
 
 export const termesTechniques = [
   {
+    terme: 'Bitcoin',
+    definition: `Le Bitcoin est une cryptomonnaie créée en 2009 par une personne (ou un groupe de personnes) sous le
+    pseudonyme de Satoshi Nakamoto. Il s'agit de la première cryptomonnaie décentralisée, c'est-à-dire qu'elle n'est
+    contrôlée par aucune autorité centrale.`
+  },
+  {
+    terme: 'DeFi',
+    definition: `La DeFi (Decentralized Finance) est un écosystème financier décentralisé qui utilise la technologie
+    blockchain pour offrir des services financiers sans passer par des intermédiaires traditionnels comme les banques.
+    Il permet d'accéder à des produits et services financiers de manière plus transparente, sécurisée et efficace.`
+  },
+  {
     terme: 'ETF',
     definition: `Un ETF (Exchange Traded Fund) est un fonds négocié en bourse. Il permet d'investir dans un panier de
     valeurs sans avoir à les acheter individuellement. C'est un produit financier qui permet de diversifier son
@@ -78,6 +90,12 @@ export const termesTechniques = [
     definition: `Un bullrun est une période de forte hausse des prix sur les marchés financiers. Cela se produit
     généralement après une période de baisse prolongée et est souvent associé à un regain d'optimisme et de
     confiance des investisseurs.`
+  },
+  {
+    terme: 'Halving',
+    definition: `Le halving est un événement qui se produit environ tous les quatre ans dans le protocole Bitcoin.
+    Il consiste en la division par deux de la récompense des mineurs pour chaque bloc miné. Cela a pour effet de
+    réduire l'offre de bitcoins et d'augmenter leur rareté.`
   },
   {
     terme: 'Bearmarket',
