@@ -20,6 +20,9 @@ export default function Veille() {
       <Section color={"success"}>
         <Articles />
       </Section>
+      <Section>
+        termes techniques
+      </Section>
     </>
   );
 }
