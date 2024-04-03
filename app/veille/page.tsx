@@ -4,6 +4,8 @@ import { Articles } from "@/app/veille/Articles";
 import { Section } from "@/components/Sections/Global/Section";
 import { Hero } from "@/components/Sections/Global/Hero";
 import Termes from "@/app/veille/Termes";
+import {H2} from "@/components/Sections/Global/Title";
+import { GiClick } from 'react-icons/gi';
 
 export default function Veille() {
   
@@ -22,17 +24,16 @@ export default function Veille() {
         </Section>
       </Hero>
       <Section color={"success"}>
-        <Articles />
+        <div className={`flex justify-center items-center gap-5`}>
+          <H2 color={'white'}> Termes techniques </H2> <GiClick className={`size-8`}/>
+        </div>
+        <Termes/>
       </Section>
-      
-      
       <Section>
-        <Termes />
+        <Articles/>
       </Section>
-      
-      
-      
-      
+    
+    
     </>
-);
+  );
 }
