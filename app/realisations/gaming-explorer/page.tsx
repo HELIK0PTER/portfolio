@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import {Divider} from "@nextui-org/react"
+import { Divider} from "@nextui-org/react"
 
 import {realisationsData} from "@/app/realisations/realisationsData";
 import {DefaultRealisation} from "@/components/Sections/realisations/DefaultRealisation"
@@ -13,7 +13,7 @@ const GamingExplorer = () => {
   const lib = realisationsData.find((realisation) => realisation.link === '/gaming-explorer')
   if (!lib) return <div>404</div>
   return (
-    <DefaultRealisation title={lib?.title} description={lib?.description}>
+    <DefaultRealisation title={lib?.title} description={lib?.description} website={lib?.website}>
       {/* 
 -Cahier des charges
 -Charte graphique
@@ -25,6 +25,7 @@ const GamingExplorer = () => {
 -Nom de domaine OVH
 -Capture d'écran pour les interfaces du site
       */}
+
       <Section color="success" full >
         <H2 color='white'>Cahier des charges</H2>
         <Image alt="image" src={`/realisations/gamingExplorer/cahier-charge.png`} width={1000} height={1000} className='rounded-md w-[600px] h-auto'  />

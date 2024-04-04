@@ -11,6 +11,7 @@ export const realisationsData = [
     description: `Projet scolaire qui consiste à créer un site web qui permet de trouver des jeux vidéos à l'aide
                   d'une API. Nous avons utilisé l'API RAWG pour ce projet.`,
     link: '/gaming-explorer',
+    website : 'https://www.gamingexplorer.fr/',
     img: imgPath + '/gamingExplorer/gamingExplorer.png',
     outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript', 'FireBase'],
     personnes: 3,
@@ -47,6 +48,7 @@ export const realisationsData = [
                   à son compte. A noter que le site est toujours en développement. (j'ai pour projet d'améliorer ce site en y ajoutant un système de prise de rendez-vous
                   et un système de paiement en ligne)`,
     link: '/tati-lissages',
+    website : 'https://www.tati-lissages.vercel.app/',
     img: imgPath + '/tatiLissages/TatiLissages.png',
     outils: ['Nextjs', 'React', 'Tailwindcss', 'Typescript', 'Figma', 'Git', 'Vercel'],
   },

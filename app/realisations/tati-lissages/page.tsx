@@ -15,7 +15,8 @@ const Tati = () => {
   if (!lib) return <div>404</div>
   return (
     <>
-    <DefaultRealisation title={lib?.title} description={lib?.description} />
+    <DefaultRealisation title={lib?.title} description={lib?.description} website={lib.website} />
+
       <Section color="success" className={`pb-0 md:pb-14`} full={true}>
         {/*
         -Maquette
