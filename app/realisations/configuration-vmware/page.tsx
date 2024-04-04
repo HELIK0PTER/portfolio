@@ -39,8 +39,6 @@ const VMware = () => {
           />
           <p className='flex flex-col justify-center bg-white text-primary rounded-3xl p-5' >{`
             Configuration de VMware pour les logiciels de maintenance des pc des techniciens.
-            (quelques difficultés rencontrées par rapport à la licence windows, en cours de résolution encore)
-
           `}</p>
         </div>
       </Section>
