@@ -15,7 +15,7 @@ const H1 = ({children, center}: h1type) => {
 	)
 }
 
-const page = () => {
+const pageMentionLegales = () => {
 	return (
 		<div className={`p-5 mx-20`}>
 		<H1 center={true}>
@@ -27,8 +27,8 @@ const page = () => {
 					Éditeur du site
 				</H1>
 				<p>
-					Matheus KOPS GUEDES
-					Adresse e-mail : matheuskg-pro@gmail.com
+					<p>Matheus KOPS GUEDES</p>
+					<p>Adresse e-mail : matheuskg-pro@gmail.com</p>
 				</p>
 			</div>
 			<div>
@@ -46,9 +46,9 @@ const page = () => {
 					Propriété Intellectuelle
 				</H1>
 				<p>
-					Tous les contenus présents sur ce site (textes, images, vidéos, etc.) sont protégés par le droit d'auteur et
+					{`Tous les contenus présents sur ce site (textes, images, vidéos, etc.) sont protégés par le droit d'auteur et
 					autres lois relatives à la propriété intellectuelle. Toute utilisation non autorisée est strictement
-					interdite.
+					interdite.`}
 				</p>
 			</div>
 			<div>
@@ -56,9 +56,8 @@ const page = () => {
 					Liens Externes
 				</H1>
 				<p>
-					Ce site peut contenir des liens vers des sites externes. L'éditeur du site ne saurait être tenu responsable
-					des
-					dommages directs ou indirects résultant de l'accès ou de l'utilisation de ce site web.
+					{`Ce site peut contenir des liens vers des sites externes. L'éditeur du site ne saurait être tenu responsable
+					des dommages directs ou indirects résultant de l'accès ou de l'utilisation de ce site web.`}
 				</p>
 			</div>
 			<div>
@@ -66,8 +65,8 @@ const page = () => {
 					Modification des Mentions Légales
 				</H1>
 				<p>
-					L'éditeur du site se réserve le droit de modifier les présentes mentions légales à tout moment. Il est
-					conseillé de consulter cette page régulièrement pour rester informé des éventuelles modifications.
+					{`L'éditeur du site se réserve le droit de modifier les présentes mentions légales à tout moment. Il est
+					conseillé de consulter cette page régulièrement pour rester informé des éventuelles modifications.`}
 				</p>
 			</div>
 		</div>
@@ -75,4 +74,4 @@ const page = () => {
 	)
 }
 
-export default page
+export default pageMentionLegales
