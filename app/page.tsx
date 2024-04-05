@@ -29,7 +29,7 @@ export default function Home() {
           </h1>
           <p>
             {`  Passionné d'informatique, je suis en 2ème année de BTS SIO. En tant que développeur full-stack, 
-              je maîtrise une multidute de langages informatiques, mais je vous laisse découvrir cela au travers de mon
+              je maîtrise une multitude de langages informatiques, mais je vous laisse découvrir cela au travers de mon
               portfolio. En dehors du code, je m'épanouis dans la musique, les voitures sportives, le sport, et la 
               culture japonaise. Explorez mes projets et n'hésitez pas à me contacter pour des collaborations ! 🚀🌟`}
           </p>
