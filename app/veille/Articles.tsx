@@ -27,30 +27,25 @@ export const Articles: React.FC = () => {
   const [ordering, setOrdering] = useState<string>('aucun');
   const [articles, setArticles] = useState(veilleData);
 
+  // helper to parse dd/mm/yyyy string
+  const parseDate = (d: string) => {
+    const [day, month, year] = d.split('/').map(Number);
+    return new Date(year, month - 1, day).getTime();
+  };
+
   useEffect(() => {
+    let sorted = [...veilleData];
     if (ordering === 'note: croissant') {
-      setArticles([...articles].sort((a, b) => a.note - b.note));
+      sorted.sort((a, b) => a.note - b.note);
     } else if (ordering === 'note: decroissant') {
-      setArticles([...articles].sort((a, b) => b.note - a.note));
+      sorted.sort((a, b) => b.note - a.note);
+    } else if (ordering === 'recents') {
+      sorted.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+    } else if (ordering === 'anciens') {
+      sorted.sort((a, b) => parseDate(a.date) - parseDate(b.date));
     }
-    else if (ordering === 'recents') {
-      setArticles([...articles].slice().sort((b, a) =>
-        new Date(Number(a.date.split("/")[2]),Number(a.date.split("/")[1]),Number(a.date.split("/")[0])).getDate()
-        -
-        new Date(Number(b.date.split("/")[2]),Number(b.date.split("/")[1]),Number(b.date.split("/")[0])).getDate()
-      ))
-    }
-    else if (ordering === 'anciens') {
-      setArticles([...articles].slice().sort((a, b) =>
-        new Date(Number(a.date.split("/")[2]),Number(a.date.split("/")[1]),Number(a.date.split("/")[0])).getDate()
-        -
-        new Date(Number(b.date.split("/")[2]),Number(b.date.split("/")[1]),Number(b.date.split("/")[0])).getDate()
-      ))
-    }
-    else {
-      setArticles(veilleData);
-    }
-  }, [articles, ordering]);
+    setArticles(sorted);
+  }, [ordering]);
   
   const handleSelectionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setOrdering(e.target.value);
