@@ -18,7 +18,6 @@ export const Footer = () => {
         <Link href={`https://gitlab.com/HELIK0PTER`} target={'_blank'} className={`flex items-center justify-center gap-1`}> <FaGitlab /> GitLab</Link>
         <Link href={`https://www.linkedin.com/in/matheus-kops-guedes-4293b7213/`} target={'_blank'} className={`flex items-center justify-center gap-1`}> <FaLinkedin /> Linkedin</Link>
       </div>
-      {/* faire une page mentions légales*/}
       <Link href={`/mentionslegales`}>Mentions Légales</Link>
     </footer>
   );
