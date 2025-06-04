@@ -1,4 +1,4 @@
-# Bienvenus sur mon portoflio codé en Next.js.
+Bienvenue sur mon portfolio codé en Next.js.
 
 ## Avant tout !
 Ce projet est déployé et accessible à l'adresse suivante: https://matheuskopsguedes.fr/
